@@ -1,0 +1,6036 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-language="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#07090b">
+
+    <title>SAMUEL HAILU — Web Developer & Software Developer</title>
+
+    <meta
+        name="description"
+        content="SAMUEL HAILU — Web Developer and Software Developer building modern digital products."
+    >
+
+    <!-- =========================================================
+         FONTS
+    ========================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <style>
+
+        /* =========================================================
+           RESET
+        ========================================================== */
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                "DM Sans",
+                "Noto Sans Ethiopic",
+                sans-serif;
+
+            background: var(--bg);
+
+            color: var(--text);
+
+            line-height: 1.6;
+
+            overflow-x: hidden;
+
+            -webkit-font-smoothing: antialiased;
+
+            text-rendering: optimizeLegibility;
+
+            transition:
+                background 0.4s ease,
+                color 0.4s ease;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+
+        /* =========================================================
+           DARK THEME
+        ========================================================== */
+
+        :root {
+
+            --bg: #070707;
+            --bg-soft: #0c0d0e;
+            --bg-card: rgba(255,255,255,0.038);
+
+            --text: #f4f4f4;
+            --text-soft: #d7d7d7;
+
+            --muted: #929292;
+            --muted-2: #686868;
+
+            --border: rgba(255,255,255,0.095);
+            --border-strong: rgba(255,255,255,0.16);
+
+            --nav-bg: rgba(19,23,29,0.90);
+
+            --accent: #baff45;
+            --accent-soft: rgba(186,255,69,0.09);
+            --accent-glow: rgba(186,255,69,0.18);
+
+            --marquee-text: #606060;
+
+            --code-bg: rgba(16,16,16,0.84);
+
+            --shadow:
+                0 25px 70px rgba(0,0,0,0.60);
+
+            --cursor-1: rgba(186,255,69,0.13);
+            --cursor-2: rgba(186,255,69,0.055);
+            --cursor-3: rgba(186,255,69,0.018);
+
+            --hover-accent: #baff45;
+            --hover-accent-bg: rgba(186,255,69,0.09);
+
+            --line-opacity: 0.10;
+            --line-core-opacity: 0.38;
+
+            /* Background animation */
+            --blob-opacity: 0.20;
+            --grid-opacity: 0.035;
+        }
+
+
+        /* =========================================================
+           LIGHT THEME
+        ========================================================== */
+
+        html[data-theme="light"] {
+
+            --bg: #eef1f2;
+            --bg-soft: #f7f8f8;
+            --bg-card: rgba(255,255,255,0.48);
+
+            --text: #111214;
+            --text-soft: #2b2d31;
+
+            --muted: #62666d;
+            --muted-2: #848890;
+
+            --border: rgba(0,0,0,0.10);
+            --border-strong: rgba(0,0,0,0.17);
+
+            --nav-bg: rgba(255,255,255,0.88);
+
+            --accent: #72b800;
+            --accent-soft: rgba(114,184,0,0.11);
+            --accent-glow: rgba(114,184,0,0.18);
+
+            --marquee-text: #777b80;
+
+            --code-bg: rgba(255,255,255,0.88);
+
+            --shadow:
+                0 25px 60px rgba(0,0,0,0.10);
+
+            --cursor-1: rgba(114,184,0,0.11);
+            --cursor-2: rgba(114,184,0,0.045);
+            --cursor-3: rgba(114,184,0,0.015);
+
+            --hover-accent: #5d9600;
+            --hover-accent-bg: rgba(114,184,0,0.15);
+
+            --line-opacity: 0.09;
+            --line-core-opacity: 0.28;
+
+            /* Background animation */
+            --blob-opacity: 0.15;
+            --grid-opacity: 0.06;
+        }
+
+
+        /* =========================================================
+           AMHARIC FONT
+        ========================================================== */
+
+        html[data-language="am"] body {
+            font-family:
+                "Noto Sans Ethiopic",
+                "DM Sans",
+                sans-serif;
+        }
+
+        html[data-language="am"]
+        .hero-title,
+
+        html[data-language="am"]
+        .section-title,
+
+        html[data-language="am"]
+        .about-big,
+
+        html[data-language="am"]
+        .contact-title,
+
+        html[data-language="am"]
+        .project-name,
+
+        html[data-language="am"]
+        .service-title,
+
+        html[data-language="am"]
+        .timeline-title {
+
+            font-family:
+                "Noto Sans Ethiopic",
+                sans-serif;
+        }
+
+
+        /* =========================================================
+           SCROLLBAR
+        ========================================================== */
+
+        body::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        body::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background: #505050;
+            border-radius: 20px;
+        }
+
+        html[data-theme="light"]
+        body::-webkit-scrollbar-thumb {
+            background: #b5b7bb;
+        }
+
+
+        /* =========================================================
+           ANIMATED BACKGROUND
+        ========================================================== */
+
+        .ambient-background {
+            position: fixed;
+
+            inset: 0;
+
+            overflow: hidden;
+
+            pointer-events: none;
+
+            z-index: 0;
+
+            background:
+                radial-gradient(
+                    circle at 18% 18%,
+                    rgba(186,255,69,0.025),
+                    transparent 28%
+                ),
+
+                radial-gradient(
+                    circle at 82% 72%,
+                    rgba(186,255,69,0.018),
+                    transparent 30%
+                );
+        }
+
+        html[data-theme="light"]
+        .ambient-background {
+            background:
+                radial-gradient(
+                    circle at 14% 16%,
+                    rgba(114,184,0,0.11),
+                    transparent 28%
+                ),
+
+                radial-gradient(
+                    circle at 82% 20%,
+                    rgba(90,110,130,0.07),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 72% 82%,
+                    rgba(114,184,0,0.08),
+                    transparent 28%
+                );
+        }
+
+
+        /* =========================================================
+           SUBTLE BACKGROUND GRID
+        ========================================================== */
+
+        .ambient-grid {
+            position: absolute;
+
+            inset: -20%;
+
+            background-image:
+                linear-gradient(
+                    rgba(255,255,255,var(--grid-opacity))
+                    1px,
+                    transparent 1px
+                ),
+
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,var(--grid-opacity))
+                    1px,
+                    transparent 1px
+                );
+
+            background-size:
+                80px 80px;
+
+            transform:
+                perspective(600px)
+                rotateX(60deg)
+                scale(1.7)
+                translateY(-5%);
+
+            transform-origin:
+                center top;
+
+            opacity: 0.8;
+        }
+
+        html[data-theme="light"]
+        .ambient-grid {
+            background-image:
+                linear-gradient(
+                    rgba(0,0,0,var(--grid-opacity))
+                    1px,
+                    transparent 1px
+                ),
+
+                linear-gradient(
+                    90deg,
+                    rgba(0,0,0,var(--grid-opacity))
+                    1px,
+                    transparent 1px
+                );
+        }
+
+
+        /* =========================================================
+           ANIMATED BLOBS
+        ========================================================== */
+
+        .ambient-blob {
+            position: absolute;
+
+            border-radius: 50%;
+
+            filter: blur(70px);
+
+            opacity:
+                var(--blob-opacity);
+
+            will-change:
+                transform;
+        }
+
+        .blob-one {
+            width: 340px;
+            height: 340px;
+
+            top: -90px;
+            left: -100px;
+
+            background:
+                rgba(186,255,69,0.33);
+
+            animation:
+                blobMoveOne
+                18s
+                ease-in-out
+                infinite alternate;
+        }
+
+        .blob-two {
+            width: 290px;
+            height: 290px;
+
+            right: -80px;
+            top: 30%;
+
+            background:
+                rgba(100,120,140,0.18);
+
+            animation:
+                blobMoveTwo
+                22s
+                ease-in-out
+                infinite alternate;
+        }
+
+        .blob-three {
+            width: 320px;
+            height: 320px;
+
+            bottom: -100px;
+            left: 38%;
+
+            background:
+                rgba(186,255,69,0.22);
+
+            animation:
+                blobMoveThree
+                20s
+                ease-in-out
+                infinite alternate;
+        }
+
+        html[data-theme="light"]
+        .blob-one {
+            background:
+                rgba(114,184,0,0.30);
+        }
+
+        html[data-theme="light"]
+        .blob-two {
+            background:
+                rgba(70,85,110,0.14);
+        }
+
+        html[data-theme="light"]
+        .blob-three {
+            background:
+                rgba(114,184,0,0.20);
+        }
+
+        @keyframes blobMoveOne {
+
+            0% {
+                transform:
+                    translate3d(0,0,0)
+                    scale(1);
+            }
+
+            50% {
+                transform:
+                    translate3d(130px,90px,0)
+                    scale(1.15);
+            }
+
+            100% {
+                transform:
+                    translate3d(260px,-20px,0)
+                    scale(0.95);
+            }
+        }
+
+        @keyframes blobMoveTwo {
+
+            0% {
+                transform:
+                    translate3d(0,0,0)
+                    scale(1);
+            }
+
+            50% {
+                transform:
+                    translate3d(-130px,-70px,0)
+                    scale(1.12);
+            }
+
+            100% {
+                transform:
+                    translate3d(-50px,130px,0)
+                    scale(0.92);
+            }
+        }
+
+        @keyframes blobMoveThree {
+
+            0% {
+                transform:
+                    translate3d(0,0,0)
+                    scale(0.95);
+            }
+
+            50% {
+                transform:
+                    translate3d(-100px,-80px,0)
+                    scale(1.14);
+            }
+
+            100% {
+                transform:
+                    translate3d(120px,-20px,0)
+                    scale(1);
+            }
+        }
+
+
+        /* =========================================================
+           BACKGROUND MOVING LINES
+        ========================================================== */
+
+        .background-lines {
+            position: fixed;
+
+            inset: 0;
+
+            width: 100%;
+            height: 100%;
+
+            overflow: hidden;
+
+            pointer-events: none;
+
+            z-index: 1;
+        }
+
+        .background-lines .line {
+
+            position: absolute;
+
+            width: 72vw;
+
+            min-width: 700px;
+
+            height: 1px;
+
+            left: -80vw;
+
+            bottom: -15vh;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent 0%,
+                    transparent 10%,
+                    var(--accent) 50%,
+                    transparent 90%,
+                    transparent 100%
+                );
+
+            opacity:
+                var(--line-opacity);
+
+            filter:
+                blur(0.15px);
+
+            animation:
+                cornerLineMove
+                8.5s
+                cubic-bezier(.55,0,.18,1)
+                infinite;
+        }
+
+        .background-lines .line::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 25%;
+
+            top: -1px;
+
+            width: 50%;
+
+            height: 3px;
+
+            border-radius: 50%;
+
+            background:
+                var(--accent);
+
+            opacity:
+                var(--line-core-opacity);
+
+            filter:
+                blur(5px);
+        }
+
+        .background-lines .line:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .background-lines .line:nth-child(2) {
+            animation-delay: -2.8s;
+        }
+
+        .background-lines .line:nth-child(3) {
+            animation-delay: -5.6s;
+        }
+
+        .background-lines .line:nth-child(2) {
+            transform:
+                rotate(-34deg)
+                translateY(75px);
+        }
+
+        .background-lines .line:nth-child(3) {
+            transform:
+                rotate(-34deg)
+                translateY(150px);
+        }
+
+        @keyframes cornerLineMove {
+
+            0% {
+                transform:
+                    rotate(-34deg)
+                    translate3d(-85vw,20vh,0);
+            }
+
+            50% {
+                opacity:
+                    calc(
+                        var(--line-opacity) + 0.03
+                    );
+            }
+
+            100% {
+                transform:
+                    rotate(-34deg)
+                    translate3d(175vw,-120vh,0);
+            }
+        }
+
+
+        /* =========================================================
+           CURSOR GLOW
+        ========================================================== */
+
+        .cursor-glow {
+
+            position: fixed;
+
+            width: 320px;
+            height: 320px;
+
+            border-radius: 50%;
+
+            pointer-events: none;
+
+            background:
+                radial-gradient(
+                    circle,
+                    var(--cursor-1) 0%,
+                    var(--cursor-2) 28%,
+                    var(--cursor-3) 48%,
+                    transparent 72%
+                );
+
+            transform:
+                translate(-50%,-50%);
+
+            z-index: 3;
+
+            filter:
+                blur(2px);
+        }
+
+
+        /* =========================================================
+           GLOBAL
+        ========================================================== */
+
+        .container {
+
+            width:
+                min(
+                    1120px,
+                    calc(100% - 36px)
+                );
+
+            margin-inline: auto;
+
+            position: relative;
+
+            z-index: 5;
+        }
+
+        section {
+
+            position: relative;
+
+            padding:
+                105px 0;
+        }
+
+        .section-label {
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 2.4px;
+
+            text-transform: uppercase;
+
+            color:
+                var(--accent);
+
+            margin-bottom:
+                14px;
+        }
+
+        .section-title {
+
+            font-family:
+                "Space Grotesk",
+                sans-serif;
+
+            font-size:
+                clamp(
+                    34px,
+                    5vw,
+                    58px
+                );
+
+            line-height:
+                1.02;
+
+            letter-spacing:
+                -2.8px;
+
+            font-weight:
+                600;
+        }
+
+        .section-description {
+
+            max-width:
+                590px;
+
+            margin-top:
+                18px;
+
+            color:
+                var(--muted);
+
+            font-size:
+                14px;
+
+            line-height:
+                1.8;
+        }
+
+
+        /* =========================================================
+           NAVBAR
+        ========================================================== */
+
+        .navbar {
+
+            position: fixed;
+
+            top: 16px;
+
+            left: 50%;
+
+            transform:
+                translateX(-50%);
+
+            width:
+                min(
+                    1120px,
+                    calc(100% - 26px)
+                );
+
+            min-height:
+                64px;
+
+            padding:
+                0 15px 0 18px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content:
+                space-between;
+
+            background:
+                var(--nav-bg);
+
+            border:
+                1px solid
+                var(--border-strong);
+
+            backdrop-filter:
+                blur(20px);
+
+            -webkit-backdrop-filter:
+                blur(20px);
+
+            border-radius:
+                16px;
+
+            box-shadow:
+                0 10px 35px
+                rgba(0,0,0,0.12);
+
+            z-index:
+                1000;
+        }
+
+        .logo {
+
+            font-family:
+                "Space Grotesk",
+                sans-serif;
+
+            font-size:
+                16px;
+
+            font-weight:
+                700;
+
+            letter-spacing:
+                1.5px;
+        }
+
+        .logo span {
+
+            color:
+                var(--accent);
+        }
+
+        .nav-right {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+        }
+
+        .nav-links {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 26px;
+
+            list-style:
+                none;
+        }
+
+        .nav-links a {
+
+            position: relative;
+
+            color:
+                var(--muted);
+
+            font-size:
+                11px;
+
+            font-weight:
+                600;
+
+            letter-spacing:
+                0.6px;
+
+            transition:
+                color 0.25s ease;
+        }
+
+        .nav-links a:hover {
+
+            color:
+                var(--text);
+        }
+
+        .nav-links a::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            bottom:
+                -6px;
+
+            width:
+                0;
+
+            height:
+                1px;
+
+            background:
+                var(--accent);
+
+            transition:
+                width 0.25s ease;
+        }
+
+        .nav-links a:hover::after {
+
+            width:
+                100%;
+        }
+
+        .nav-contact {
+
+            padding:
+                9px 13px;
+
+            border:
+                1px solid
+                var(--border-strong);
+
+            border-radius:
+                9px;
+
+            color:
+                var(--text) !important;
+        }
+
+        .nav-contact:hover {
+
+            color:
+                var(--hover-accent) !important;
+
+            background:
+                var(--hover-accent-bg);
+
+            border-color:
+                var(--hover-accent);
+
+            box-shadow:
+                0 5px 18px
+                var(--accent-glow);
+        }
+
+
+        /* =========================================================
+           LANGUAGE TOGGLE
+        ========================================================== */
+
+        .language-toggle {
+
+            height:
+                36px;
+
+            min-width:
+                69px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            gap:
+                4px;
+
+            padding:
+                0 8px;
+
+            border:
+                1px solid
+                var(--border-strong);
+
+            border-radius:
+                10px;
+
+            background:
+                var(--bg-card);
+
+            color:
+                var(--text);
+
+            cursor:
+                pointer;
+
+            font-size:
+                9px;
+
+            font-weight:
+                700;
+
+            letter-spacing:
+                0.4px;
+
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease,
+                border-color 0.25s ease,
+                color 0.25s ease;
+        }
+
+        .language-toggle:hover {
+
+            transform:
+                translateY(-2px);
+
+            color:
+                var(--hover-accent);
+
+            background:
+                var(--hover-accent-bg);
+
+            border-color:
+                var(--hover-accent);
+        }
+
+        .language-current {
+
+            color:
+                var(--accent);
+        }
+
+        .language-divider {
+
+            color:
+                var(--muted-2);
+        }
+
+        .language-other {
+
+            color:
+                var(--muted);
+        }
+
+
+        /* =========================================================
+           THEME TOGGLE
+        ========================================================== */
+
+        .theme-toggle {
+
+            width:
+                36px;
+
+            height:
+                36px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            border:
+                1px solid
+                var(--border-strong);
+
+            border-radius:
+                10px;
+
+            background:
+                var(--bg-card);
+
+            color:
+                var(--text);
+
+            cursor:
+                pointer;
+
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease,
+                border-color 0.25s ease,
+                color 0.25s ease;
+        }
+
+        .theme-toggle:hover {
+
+            transform:
+                translateY(-2px);
+
+            color:
+                var(--hover-accent);
+
+            background:
+                var(--hover-accent-bg);
+
+            border-color:
+                var(--hover-accent);
+        }
+
+        .theme-toggle svg {
+
+            width:
+                15px;
+
+            height:
+                15px;
+        }
+
+        .theme-icon-sun {
+
+            display:
+                none;
+        }
+
+        html[data-theme="light"]
+        .theme-icon-moon {
+
+            display:
+                none;
+        }
+
+        html[data-theme="light"]
+        .theme-icon-sun {
+
+            display:
+                block;
+        }
+
+
+        /* =========================================================
+           MOBILE MENU
+        ========================================================== */
+
+        .menu-btn {
+
+            display:
+                none;
+
+            width:
+                36px;
+
+            height:
+                36px;
+
+            border:
+                1px solid
+                var(--border-strong);
+
+            border-radius:
+                10px;
+
+            background:
+                transparent;
+
+            color:
+                var(--text);
+
+            cursor:
+                pointer;
+
+            transition:
+                0.25s ease;
+        }
+
+        .menu-btn:hover {
+
+            color:
+                var(--hover-accent);
+
+            border-color:
+                var(--hover-accent);
+
+            background:
+                var(--hover-accent-bg);
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================== */
+
+        .hero {
+
+            min-height:
+                100vh;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            padding-top:
+                140px;
+
+            padding-bottom:
+                70px;
+
+            overflow:
+                hidden;
+        }
+
+        .hero-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1.12fr
+                0.88fr;
+
+            align-items:
+                center;
+
+            gap:
+                65px;
+        }
+
+        .hero-kicker {
+
+            display:
+                inline-flex;
+
+            align-items:
+                center;
+
+            gap:
+                9px;
+
+            color:
+                var(--muted);
+
+            font-size:
+                10px;
+
+            font-weight:
+                600;
+
+            letter-spacing:
+                1.3px;
+
+            margin-bottom:
+                19px;
+        }
+
+        .status-dot {
+
+            width:
+                7px;
+
+            height:
+                7px;
+
+            border-radius:
+                50%;
+
+            background:
+                var(--accent);
+
+            box-shadow:
+                0 0 11px
+                var(--accent),
+
+                0 0 22px
+                var(--accent-glow);
+        }
+
+        .hero-title {
+
+            font-family:
+                "Space Grotesk",
+                "Noto Sans Ethiopic",
+                sans-serif;
+
+            font-size:
+                clamp(
+                    46px,
+                    6.5vw,
+                    79px
+                );
+
+            line-height:
+                0.92;
+
+            letter-spacing:
+                -5px;
+
+            font-weight:
+                600;
+
+            max-width:
+                760px;
+        }
+
+        .hero-title .accent {
+
+            color:
+                var(--accent);
+        }
+
+        .hero-description {
+
+            max-width:
+                575px;
+
+            margin-top:
+                25px;
+
+            color:
+                var(--muted);
+
+            font-size:
+                14px;
+
+            line-height:
+                1.85;
+        }
+
+        .hero-description strong {
+
+            color:
+                var(--text-soft);
+
+            font-weight:
+                600;
+        }
+
+
+        /* =========================================================
+           BUTTONS
+        ========================================================== */
+
+        .hero-actions {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            flex-wrap:
+                wrap;
+
+            gap:
+                10px;
+
+            margin-top:
+                28px;
+        }
+
+        .btn {
+
+            display:
+                inline-flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            gap:
+                9px;
+
+            min-height:
+                43px;
+
+            padding:
+                0 17px;
+
+            border-radius:
+                10px;
+
+            font-size:
+                11px;
+
+            font-weight:
+                700;
+
+            letter-spacing:
+                0.4px;
+
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease,
+                color 0.25s ease;
+        }
+
+        .btn:hover {
+
+            transform:
+                translateY(-3px);
+        }
+
+        .btn-primary {
+
+            background:
+                var(--accent);
+
+            color:
+                #080808;
+        }
+
+        .btn-primary:hover {
+
+            background:
+                var(--hover-accent);
+
+            color:
+                #ffffff;
+
+            box-shadow:
+                0 14px 32px
+                var(--accent-glow);
+        }
+
+        .btn-secondary {
+
+            border:
+                1px solid
+                var(--border-strong);
+
+            color:
+                var(--text);
+
+            background:
+                var(--bg-card);
+        }
+
+        .btn-secondary:hover {
+
+            color:
+                var(--hover-accent);
+
+            background:
+                var(--hover-accent-bg);
+
+            border-color:
+                var(--hover-accent);
+
+            box-shadow:
+                0 6px 20px
+                var(--accent-glow);
+        }
+
+
+        /* =========================================================
+           HERO SOCIALS
+        ========================================================== */
+
+        .hero-socials {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                8px;
+
+            margin-top:
+                27px;
+        }
+
+        .hero-social-link {
+
+            width:
+                36px;
+
+            height:
+                36px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius:
+                10px;
+
+            color:
+                var(--muted);
+
+            background:
+                var(--bg-card);
+
+            transition:
+                transform 0.25s ease,
+                color 0.25s ease,
+                border-color 0.25s ease,
+                background 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .hero-social-link:hover {
+
+            color:
+                var(--hover-accent);
+
+            border-color:
+                var(--hover-accent);
+
+            background:
+                var(--hover-accent-bg);
+
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 6px 18px
+                var(--accent-glow);
+        }
+
+        .hero-social-link svg {
+
+            width:
+                16px;
+
+            height:
+                16px;
+        }
+
+
+        /* =========================================================
+           HERO VISUAL
+        ========================================================== */
+
+        .hero-visual {
+
+            min-height:
+                430px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            position:
+                relative;
+        }
+
+        .visual-orbit {
+
+            position:
+                absolute;
+
+            width:
+                330px;
+
+            height:
+                330px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius:
+                50%;
+
+            animation:
+                rotate 19s linear infinite;
+        }
+
+        .visual-orbit::before {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            left:
+                50%;
+
+            top:
+                -4px;
+
+            width:
+                7px;
+
+            height:
+                7px;
+
+            border-radius:
+                50%;
+
+            background:
+                var(--accent);
+
+            box-shadow:
+                0 0 16px
+                var(--accent);
+        }
+
+        .visual-orbit.two {
+
+            width:
+                240px;
+
+            height:
+                240px;
+
+            animation-duration:
+                13s;
+
+            animation-direction:
+                reverse;
+
+            border-color:
+                rgba(255,255,255,0.055);
+        }
+
+        html[data-theme="light"]
+        .visual-orbit.two {
+
+            border-color:
+                rgba(0,0,0,0.055);
+        }
+
+        .visual-core {
+
+            width:
+                158px;
+
+            height:
+                158px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            border-radius:
+                34px;
+
+            border:
+                1px solid
+                var(--border-strong);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.095),
+                    rgba(255,255,255,0.018)
+                );
+
+            box-shadow:
+                var(--shadow),
+                inset
+                0 1px 0
+                rgba(255,255,255,0.075);
+
+            backdrop-filter:
+                blur(15px);
+
+            transform:
+                rotate(-8deg);
+
+            transition:
+                background 0.35s ease,
+                box-shadow 0.35s ease;
+        }
+
+        html[data-theme="light"]
+        .visual-core {
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.96),
+                    rgba(255,255,255,0.72)
+                );
+
+            box-shadow:
+                0 25px 60px
+                rgba(0,0,0,0.08);
+        }
+
+        .core-text {
+
+            font-family:
+                "Space Grotesk",
+                sans-serif;
+
+            font-size:
+                34px;
+
+            font-weight:
+                700;
+
+            letter-spacing:
+                -2px;
+
+            color:
+                var(--accent);
+        }
+
+        .floating-code {
+
+            position:
+                absolute;
+
+            padding:
+                9px 12px;
+
+            border-radius:
+                9px;
+
+            border:
+                1px solid
+                var(--border);
+
+            background:
+                var(--code-bg);
+
+            backdrop-filter:
+                blur(12px);
+
+            color:
+                var(--muted);
+
+            font-family:
+                monospace;
+
+            font-size:
+                9px;
+
+            box-shadow:
+                0 15px 35px
+                rgba(0,0,0,0.20);
+        }
+
+        .code-one {
+
+            top:
+                65px;
+
+            right:
+                5px;
+        }
+
+        .code-two {
+
+            left:
+                5px;
+
+            bottom:
+                76px;
+        }
+
+        .code-three {
+
+            right:
+                40px;
+
+            bottom:
+                25px;
+        }
+
+        @keyframes rotate {
+
+            from {
+                transform:
+                    rotate(0deg);
+            }
+
+            to {
+                transform:
+                    rotate(360deg);
+            }
+        }
+
+
+        /* =========================================================
+           MARQUEE
+        ========================================================== */
+
+        .marquee {
+
+            overflow:
+                hidden;
+
+            border-top:
+                1px solid
+                var(--border);
+
+            border-bottom:
+                1px solid
+                var(--border);
+
+            padding:
+                16px 0;
+
+            white-space:
+                nowrap;
+
+            position:
+                relative;
+
+            z-index:
+                5;
+        }
+
+        .marquee-track {
+
+            display:
+                inline-flex;
+
+            align-items:
+                center;
+
+            gap:
+                34px;
+
+            animation:
+                marquee
+                22s
+                linear
+                infinite;
+        }
+
+        .marquee span {
+
+            color:
+                var(--marquee-text);
+
+            font-size:
+                9px;
+
+            font-weight:
+                700;
+
+            letter-spacing:
+                2px;
+        }
+
+        .marquee .dot {
+
+            color:
+                var(--accent);
+        }
+
+        @keyframes marquee {
+
+            from {
+                transform:
+                    translateX(0);
+            }
+
+            to {
+                transform:
+                    translateX(-50%);
+            }
+        }
+
+
+        /* =========================================================
+           PROJECTS
+        ========================================================== */
+
+        .projects-header {
+
+            display:
+                flex;
+
+            align-items:
+                flex-end;
+
+            justify-content:
+                space-between;
+
+            gap:
+                35px;
+
+            margin-bottom:
+                43px;
+        }
+
+        .project-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap:
+                18px;
+        }
+
+        .project-card {
+
+            position:
+                relative;
+
+            min-height:
+                425px;
+
+            padding:
+                20px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius:
+                19px;
+
+            background:
+                var(--bg-card);
+
+            overflow:
+                hidden;
+
+            transition:
+                border-color 0.35s ease,
+                transform 0.35s ease,
+                background 0.35s ease,
+                box-shadow 0.35s ease;
+        }
+
+        .project-card:hover {
+
+            border-color:
+                var(--hover-accent);
+
+            background:
+                var(--hover-accent-bg);
+
+            box-shadow:
+                0 12px 35px
+                rgba(0,0,0,0.07);
+        }
+
+
+        /* =========================================================
+           PROJECT IMAGE
+        ========================================================== */
+
+        .project-preview {
+
+            height:
+                235px;
+
+            position:
+                relative;
+
+            border-radius:
+                14px;
+
+            overflow:
+                hidden;
+
+            background:
+                var(--bg-soft);
+
+            border:
+                1px solid
+                var(--border);
+
+            margin-bottom:
+                21px;
+        }
+
+        .project-image {
+
+            width:
+                100%;
+
+            height:
+                100%;
+
+            display:
+                block;
+
+            object-fit:
+                cover;
+
+            object-position:
+                center;
+
+            transition:
+                transform 0.5s ease,
+                filter 0.5s ease;
+        }
+
+        .project-card:hover
+        .project-image {
+
+            transform:
+                scale(1.035);
+
+            filter:
+                brightness(1.04);
+        }
+
+        .project-preview::after {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            inset:
+                0;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(0,0,0,0) 55%,
+                    rgba(0,0,0,0.18)
+                );
+
+            pointer-events:
+                none;
+        }
+
+
+        /* =========================================================
+           PROJECT DETAILS
+        ========================================================== */
+
+        .project-number {
+
+            position:
+                absolute;
+
+            right:
+                17px;
+
+            top:
+                17px;
+
+            font-family:
+                monospace;
+
+            font-size:
+                10px;
+
+            color:
+                var(--muted-2);
+        }
+
+        .project-name {
+
+            font-family:
+                "Space Grotesk",
+                "Noto Sans Ethiopic",
+                sans-serif;
+
+            font-size:
+                22px;
+
+            line-height:
+                1.1;
+
+            letter-spacing:
+                -0.7px;
+
+            margin-bottom:
+                7px;
+        }
+
+        .project-description {
+
+            color:
+                var(--muted);
+
+            font-size:
+                12px;
+
+            line-height:
+                1.75;
+
+            max-width:
+                500px;
+        }
+
+        .project-footer {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                space-between;
+
+            gap:
+                12px;
+
+            margin-top:
+                15px;
+        }
+
+        .tags {
+
+            display:
+                flex;
+
+            flex-wrap:
+                wrap;
+
+            gap:
+                6px;
+        }
+
+        .tag {
+
+            padding:
+                5px 7px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius:
+                6px;
+
+            font-size:
+                8px;
+
+            color:
+                var(--muted);
+
+            letter-spacing:
+                0.4px;
+        }
+
+        .project-link {
+
+            white-space:
+                nowrap;
+
+            color:
+                var(--accent);
+
+            font-size:
+                9px;
+
+            font-weight:
+                700;
+
+            letter-spacing:
+                0.8px;
+
+            transition:
+                color 0.25s ease;
+        }
+
+        .project-link:hover {
+
+            color:
+                var(--hover-accent);
+        }
+
+
+        /* =========================================================
+           SERVICES
+        ========================================================== */
+
+        .services-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap:
+                13px;
+
+            margin-top:
+                45px;
+        }
+
+        .service-card {
+
+            min-height:
+                230px;
+
+            padding:
+                23px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius:
+                16px;
+
+            background:
+                var(--bg-card);
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                background 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+
+            transform:
+                translateY(-4px);
+
+            border-color:
+                var(--hover-accent);
+
+            background:
+                var(--hover-accent-bg);
+
+            box-shadow:
+                0 12px 30px
+                rgba(0,0,0,0.065);
+        }
+
+        .service-number {
+
+            font-family:
+                monospace;
+
+            font-size:
+                9px;
+
+            color:
+                var(--accent);
+        }
+
+        .service-title {
+
+            font-family:
+                "Space Grotesk",
+                "Noto Sans Ethiopic",
+                sans-serif;
+
+            margin-top:
+                47px;
+
+            font-size:
+                21px;
+
+            line-height:
+                1.15;
+
+            letter-spacing:
+                -0.7px;
+        }
+
+        .service-text {
+
+            margin-top:
+                10px;
+
+            color:
+                var(--muted);
+
+            font-size:
+                12px;
+
+            line-height:
+                1.75;
+        }
+
+
+        /* =========================================================
+           TECHNOLOGY
+        ========================================================== */
+
+        .tech-list {
+
+            display:
+                flex;
+
+            flex-wrap:
+                wrap;
+
+            gap:
+                8px;
+
+            margin-top:
+                38px;
+        }
+
+        .tech-item {
+
+            padding:
+                11px 14px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius:
+                9px;
+
+            color:
+                var(--muted);
+
+            font-size:
+                10px;
+
+            background:
+                var(--bg-card);
+
+            transition:
+                transform 0.25s ease,
+                color 0.25s ease,
+                border-color 0.25s ease,
+                background 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .tech-item:hover {
+
+            color:
+                var(--hover-accent);
+
+            border-color:
+                var(--hover-accent);
+
+            background:
+                var(--hover-accent-bg);
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 6px 18px
+                var(--accent-glow);
+        }
+
+
+        /* =========================================================
+           ABOUT
+        ========================================================== */
+
+        .about-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                0.75fr
+                1.25fr;
+
+            gap:
+                75px;
+
+            align-items:
+                start;
+        }
+
+        .about-big {
+
+            font-family:
+                "Space Grotesk",
+                "Noto Sans Ethiopic",
+                sans-serif;
+
+            font-size:
+                clamp(
+                    32px,
+                    4vw,
+                    49px
+                );
+
+            line-height:
+                0.98;
+
+            letter-spacing:
+                -2px;
+
+            font-weight:
+                600;
+        }
+
+        .about-text {
+
+            color:
+                var(--muted);
+
+            font-size:
+                13px;
+
+            line-height:
+                1.85;
+
+            margin-bottom:
+                16px;
+        }
+
+        .about-text strong {
+
+            color:
+                var(--text-soft);
+
+            font-weight:
+                600;
+        }
+
+
+        /* =========================================================
+           TIMELINE
+        ========================================================== */
+
+        .timeline {
+
+            margin-top:
+                52px;
+
+            border-top:
+                1px solid
+                var(--border);
+        }
+
+        .timeline-item {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                130px
+                1fr;
+
+            gap:
+                42px;
+
+            padding:
+                27px 0;
+
+            border-bottom:
+                1px solid
+                var(--border);
+        }
+
+        .timeline-year {
+
+            color:
+                var(--accent);
+
+            font-family:
+                monospace;
+
+            font-size:
+                9px;
+
+            letter-spacing:
+                1px;
+        }
+
+        .timeline-title {
+
+            font-family:
+                "Space Grotesk",
+                "Noto Sans Ethiopic",
+                sans-serif;
+
+            font-size:
+                20px;
+
+            letter-spacing:
+                -0.7px;
+
+            margin-bottom:
+                5px;
+        }
+
+        .timeline-text {
+
+            max-width:
+                620px;
+
+            color:
+                var(--muted);
+
+            font-size:
+                12px;
+
+            line-height:
+                1.75;
+        }
+
+
+        /* =========================================================
+           CONTACT
+        ========================================================== */
+
+        .contact {
+
+            padding-bottom:
+                75px;
+        }
+
+        .contact-box {
+
+            position:
+                relative;
+
+            overflow:
+                hidden;
+
+            padding:
+                55px 45px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius:
+                21px;
+
+            background:
+                radial-gradient(
+                    circle at 92% 18%,
+                    var(--accent-soft),
+                    transparent 30%
+                ),
+                var(--bg-card);
+
+            transition:
+                background 0.35s ease,
+                border-color 0.35s ease;
+        }
+
+        .contact-title {
+
+            font-family:
+                "Space Grotesk",
+                "Noto Sans Ethiopic",
+                sans-serif;
+
+            max-width:
+                720px;
+
+            font-size:
+                clamp(
+                    37px,
+                    5.6vw,
+                    63px
+                );
+
+            line-height:
+                0.98;
+
+            letter-spacing:
+                -3px;
+
+            font-weight:
+                600;
+        }
+
+        .contact-text {
+
+            max-width:
+                540px;
+
+            margin-top:
+                16px;
+
+            color:
+                var(--muted);
+
+            font-size:
+                13px;
+
+            line-height:
+                1.75;
+        }
+
+        .contact-actions {
+
+            display:
+                flex;
+
+            flex-wrap:
+                wrap;
+
+            gap:
+                9px;
+
+            margin-top:
+                25px;
+        }
+
+
+        /* =========================================================
+           SOCIAL CONTACT
+        ========================================================== */
+
+        .social-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap:
+                9px;
+
+            margin-top:
+                30px;
+
+            max-width:
+                720px;
+        }
+
+        .social-card {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                12px;
+
+            padding:
+                14px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius:
+                11px;
+
+            background:
+                var(--bg-card);
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                background 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .social-card:hover {
+
+            transform:
+                translateY(-3px);
+
+            border-color:
+                var(--hover-accent);
+
+            background:
+                var(--hover-accent-bg);
+
+            box-shadow:
+                0 8px 24px
+                rgba(0,0,0,0.07);
+        }
+
+        .social-icon {
+
+            width:
+                35px;
+
+            height:
+                35px;
+
+            flex-shrink:
+                0;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius:
+                9px;
+
+            color:
+                var(--accent);
+
+            transition:
+                color 0.25s ease,
+                border-color 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .social-card:hover
+        .social-icon {
+
+            color:
+                var(--hover-accent);
+
+            border-color:
+                var(--hover-accent);
+
+            background:
+                rgba(
+                    114,
+                    184,
+                    0,
+                    0.08
+                );
+        }
+
+        .social-icon svg {
+
+            width:
+                15px;
+
+            height:
+                15px;
+        }
+
+        .social-label {
+
+            display:
+                block;
+
+            color:
+                var(--muted-2);
+
+            font-size:
+                8px;
+
+            letter-spacing:
+                1px;
+
+            text-transform:
+                uppercase;
+        }
+
+        .social-value {
+
+            display:
+                block;
+
+            color:
+                var(--text-soft);
+
+            font-size:
+                10px;
+
+            margin-top:
+                2px;
+
+            white-space:
+                nowrap;
+
+            overflow:
+                hidden;
+
+            text-overflow:
+                ellipsis;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================== */
+
+        footer {
+
+            padding:
+                25px 0 30px;
+
+            border-top:
+                1px solid
+                var(--border);
+
+            position:
+                relative;
+
+            z-index:
+                5;
+        }
+
+        .footer-inner {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                space-between;
+
+            gap:
+                20px;
+        }
+
+        .footer-name {
+
+            font-family:
+                "Space Grotesk",
+                sans-serif;
+
+            font-size:
+                10px;
+
+            font-weight:
+                700;
+
+            letter-spacing:
+                1.3px;
+        }
+
+        .footer-copy {
+
+            color:
+                var(--muted-2);
+
+            font-size:
+                9px;
+
+            letter-spacing:
+                0.3px;
+        }
+
+        .footer-socials {
+
+            display:
+                flex;
+
+            gap:
+                7px;
+        }
+
+        .footer-social {
+
+            width:
+                31px;
+
+            height:
+                31px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius:
+                8px;
+
+            color:
+                var(--muted);
+
+            transition:
+                0.25s ease;
+        }
+
+        .footer-social:hover {
+
+            color:
+                var(--hover-accent);
+
+            border-color:
+                var(--hover-accent);
+
+            background:
+                var(--hover-accent-bg);
+        }
+
+        .footer-social svg {
+
+            width:
+                13px;
+
+            height:
+                13px;
+        }
+
+
+        /* =========================================================
+           REVEAL
+        ========================================================== */
+
+        .reveal {
+
+            opacity:
+                0;
+
+            transform:
+                translateY(24px);
+
+            transition:
+                opacity 0.75s ease,
+                transform 0.75s ease;
+        }
+
+        .reveal.active {
+
+            opacity:
+                1;
+
+            transform:
+                translateY(0);
+        }
+
+
+        /* =========================================================
+           TABLET
+        ========================================================== */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+
+                position:
+                    absolute;
+
+                top:
+                    73px;
+
+                left:
+                    0;
+
+                right:
+                    0;
+
+                display:
+                    none;
+
+                flex-direction:
+                    column;
+
+                gap:
+                    3px;
+
+                padding:
+                    10px;
+
+                border:
+                    1px solid
+                    var(--border);
+
+                border-radius:
+                    14px;
+
+                background:
+                    var(--nav-bg);
+
+                backdrop-filter:
+                    blur(20px);
+
+                box-shadow:
+                    0 20px 45px
+                    rgba(0,0,0,0.18);
+            }
+
+            .nav-links.active {
+                display:
+                    flex;
+            }
+
+            .nav-links a {
+
+                display:
+                    block;
+
+                padding:
+                    11px;
+
+                border-radius:
+                    8px;
+            }
+
+            .nav-links a:hover {
+
+                background:
+                    var(--hover-accent-bg);
+
+                color:
+                    var(--hover-accent);
+            }
+
+            .nav-links a::after {
+
+                display:
+                    none;
+            }
+
+            .nav-contact {
+
+                text-align:
+                    center;
+            }
+
+            .menu-btn {
+
+                display:
+                    flex;
+
+                align-items:
+                    center;
+
+                justify-content:
+                    center;
+            }
+
+            .hero-grid {
+
+                grid-template-columns:
+                    1fr;
+
+                gap:
+                    20px;
+            }
+
+            .hero-visual {
+
+                min-height:
+                    340px;
+            }
+
+            .projects-header {
+
+                display:
+                    block;
+            }
+
+            .project-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+            .services-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+            .about-grid {
+
+                grid-template-columns:
+                    1fr;
+
+                gap:
+                    32px;
+            }
+
+            .social-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================== */
+
+        @media (max-width: 600px) {
+
+            .container {
+
+                width:
+                    min(
+                        calc(100% - 26px),
+                        1120px
+                    );
+            }
+
+            section {
+
+                padding:
+                    80px 0;
+            }
+
+            .navbar {
+
+                top:
+                    9px;
+
+                width:
+                    calc(100% - 18px);
+
+                min-height:
+                    58px;
+            }
+
+            .nav-right {
+
+                gap:
+                    5px;
+            }
+
+            .language-toggle {
+
+                min-width:
+                    61px;
+
+                font-size:
+                    8px;
+            }
+
+            .hero {
+
+                padding-top:
+                    120px;
+            }
+
+            .hero-title {
+
+                font-size:
+                    clamp(
+                        43px,
+                        14vw,
+                        67px
+                    );
+
+                letter-spacing:
+                    -4px;
+            }
+
+            html[data-language="am"]
+            .hero-title {
+
+                font-size:
+                    clamp(
+                        36px,
+                        10.5vw,
+                        57px
+                    );
+
+                letter-spacing:
+                    -1.2px;
+
+                line-height:
+                    1.10;
+            }
+
+            .hero-description {
+
+                font-size:
+                    13px;
+            }
+
+            .hero-socials {
+
+                margin-top:
+                    23px;
+            }
+
+            .hero-visual {
+
+                min-height:
+                    310px;
+            }
+
+            .visual-orbit {
+
+                width:
+                    260px;
+
+                height:
+                    260px;
+            }
+
+            .visual-orbit.two {
+
+                width:
+                    195px;
+
+                height:
+                    195px;
+            }
+
+            .visual-core {
+
+                width:
+                    128px;
+
+                height:
+                    128px;
+
+                border-radius:
+                    28px;
+            }
+
+            .core-text {
+
+                font-size:
+                    29px;
+            }
+
+            .floating-code {
+
+                font-size:
+                    8px;
+            }
+
+            .code-one {
+
+                right:
+                    0;
+
+                top:
+                    40px;
+            }
+
+            .code-two {
+
+                left:
+                    0;
+
+                bottom:
+                    60px;
+            }
+
+            .code-three {
+
+                right:
+                    8px;
+
+                bottom:
+                    17px;
+            }
+
+            .background-lines .line {
+
+                width:
+                    140vw;
+
+                min-width:
+                    600px;
+            }
+
+            .ambient-grid {
+
+                background-size:
+                    55px 55px;
+
+                transform:
+                    perspective(500px)
+                    rotateX(60deg)
+                    scale(1.9)
+                    translateY(-2%);
+            }
+
+            .project-card {
+
+                min-height:
+                    400px;
+
+                padding:
+                    17px;
+            }
+
+            .project-preview {
+
+                height:
+                    205px;
+            }
+
+            .project-footer {
+
+                align-items:
+                    flex-end;
+
+                flex-direction:
+                    column;
+            }
+
+            .timeline-item {
+
+                grid-template-columns:
+                    1fr;
+
+                gap:
+                    8px;
+            }
+
+            .contact-box {
+
+                padding:
+                    40px 22px;
+            }
+
+            .contact-title {
+
+                letter-spacing:
+                    -2px;
+            }
+
+            html[data-language="am"]
+            .contact-title {
+
+                font-size:
+                    32px;
+
+                line-height:
+                    1.12;
+
+                letter-spacing:
+                    -1px;
+            }
+
+            .footer-inner {
+
+                flex-direction:
+                    column;
+
+                align-items:
+                    flex-start;
+            }
+
+        }
+
+
+        /* =========================================================
+           TOUCH DEVICES
+        ========================================================== */
+
+        @media (pointer: coarse) {
+
+            .cursor-glow {
+
+                display:
+                    none;
+            }
+        }
+
+
+        /* =========================================================
+           REDUCED MOTION
+        ========================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+
+                scroll-behavior:
+                    auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+
+                animation-duration:
+                    0.01ms !important;
+
+                animation-iteration-count:
+                    1 !important;
+
+                transition-duration:
+                    0.01ms !important;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+         BACKGROUND
+    ========================================================== -->
+
+    <div
+        class="ambient-background"
+        aria-hidden="true"
+    >
+
+        <div class="ambient-grid"></div>
+
+        <div class="light-field"></div>
+
+    </div>
+
+
+    <!-- =========================================================
+         THREE MOVING LINES
+    ========================================================== -->
+
+    <div
+        class="background-lines"
+        aria-hidden="true"
+    >
+
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+
+    </div>
+
+
+    <!-- =========================================================
+         CURSOR GLOW
+    ========================================================== -->
+
+    <div class="cursor-glow"></div>
+
+
+    <!-- =========================================================
+         NAVBAR
+    ========================================================== -->
+
+    <header class="navbar">
+
+
+        <a
+            href="#home"
+            class="logo"
+        >
+            SAMUEL<span>.</span>
+        </a>
+
+
+        <nav>
+
+            <ul
+                class="nav-links"
+                id="navLinks"
+            >
+
+                <li>
+                    <a
+                        href="#home"
+                        data-i18n="navHome"
+                    >
+                        HOME
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="#work"
+                        data-i18n="navWork"
+                    >
+                        WORK
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="#services"
+                        data-i18n="navServices"
+                    >
+                        SERVICES
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="#about"
+                        data-i18n="navAbout"
+                    >
+                        ABOUT
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="#contact"
+                        class="nav-contact"
+                        data-i18n="navContact"
+                    >
+                        CONTACT
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <div class="nav-right">
+
+
+            <!-- LANGUAGE -->
+
+            <button
+                class="language-toggle"
+                id="languageToggle"
+                type="button"
+                aria-label="Switch language"
+            >
+
+                <span
+                    class="language-current"
+                    id="languageCurrent"
+                >
+                    EN
+                </span>
+
+                <span class="language-divider">
+                    /
+                </span>
+
+                <span
+                    class="language-other"
+                    id="languageOther"
+                >
+                    አማ
+                </span>
+
+            </button>
+
+
+            <!-- THEME -->
+
+            <button
+                class="theme-toggle"
+                id="themeToggle"
+                type="button"
+                aria-label="Toggle theme"
+            >
+
+                <!-- MOON -->
+
+                <svg
+                    class="theme-icon-moon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+
+                    <path
+                        d="M21 12.79A9 9 0 1 1
+                        11.21 3
+                        6.99 6.99 0 0 0
+                        21 12.79z"
+                    />
+
+                </svg>
+
+
+                <!-- SUN -->
+
+                <svg
+                    class="theme-icon-sun"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linecap="round"
+                >
+
+                    <circle
+                        cx="12"
+                        cy="12"
+                        r="4"
+                    />
+
+                    <path d="M12 2v2"/>
+                    <path d="M12 20v2"/>
+                    <path d="M2 12h2"/>
+                    <path d="M20 12h2"/>
+
+                    <path
+                        d="m4.93 4.93
+                        1.41 1.41"
+                    />
+
+                    <path
+                        d="m17.66 17.66
+                        1.41 1.41"
+                    />
+
+                    <path
+                        d="m6.34 17.66
+                        -1.41 1.41"
+                    />
+
+                    <path
+                        d="m19.07 4.93
+                        -1.41 1.41"
+                    />
+
+                </svg>
+
+            </button>
+
+
+            <!-- MOBILE MENU -->
+
+            <button
+                class="menu-btn"
+                id="menuBtn"
+                type="button"
+                aria-label="Open navigation menu"
+            >
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================================
+         MAIN
+    ========================================================== -->
+
+    <main>
+
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
+        <section
+            class="hero"
+            id="home"
+        >
+
+            <div class="container">
+
+                <div class="hero-grid">
+
+
+                    <!-- HERO CONTENT -->
+
+                    <div
+                        class="hero-content reveal"
+                    >
+
+                        <div class="hero-kicker">
+
+                            <span
+                                class="status-dot"
+                            ></span>
+
+                            <span
+                                data-i18n="availability"
+                            >
+                                AVAILABLE FOR SELECTED PROJECTS
+                            </span>
+
+                        </div>
+
+
+                        <h1
+                            class="hero-title"
+                            data-i18n="heroTitle"
+                        >
+
+                            I BUILD
+                            <span class="accent">
+                                DIGITAL
+                            </span>
+                            EXPERIENCES.
+
+                        </h1>
+
+
+                        <p
+                            class="hero-description"
+                            data-i18n="heroDescription"
+                        >
+
+                            I'm
+                            <strong>
+                                SAMUEL HAILU
+                            </strong>,
+
+                            a web developer and software developer
+                            focused on building modern, functional
+                            and memorable digital products.
+
+                        </p>
+
+
+                        <div class="hero-actions">
+
+                            <a
+                                href="#work"
+                                class="btn btn-primary"
+                                data-i18n="exploreWork"
+                            >
+                                EXPLORE MY WORK
+                                <span>↗</span>
+                            </a>
+
+
+                            <a
+                                href="#contact"
+                                class="btn btn-secondary"
+                                data-i18n="letsTalk"
+                            >
+                                LET'S TALK
+                            </a>
+
+                        </div>
+
+
+                        <!-- SOCIAL ICONS -->
+
+                        <div class="hero-socials">
+
+
+                            <!-- PHONE -->
+
+                            <a
+                                href="tel:+251980431421"
+                                class="hero-social-link"
+                                aria-label="Phone"
+                            >
+
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1.8"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2
+                                        19.79 19.79 0 0 1-8.63-3.07
+                                        19.5 19.5 0 0 1-6-6
+                                        19.79 19.79 0 0 1-3.07-8.67
+                                        A2 2 0 0 1 4.11 2h3
+                                        a2 2 0 0 1 2 1.72
+                                        12.84 12.84 0 0 0 .7 2.81
+                                        2 2 0 0 1-.45 2.11
+                                        L8.09 9.91
+                                        a16 16 0 0 0 6 6
+                                        l1.27-1.27
+                                        a2 2 0 0 1 2.11-.45
+                                        12.84 12.84 0 0 0 2.81.7
+                                        A2 2 0 0 1 22 16.92z"
+                                    />
+
+                                </svg>
+
+                            </a>
+
+
+                            <!-- TELEGRAM -->
+
+                            <a
+                                href="https://t.me/heruy890"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="hero-social-link"
+                                aria-label="Telegram"
+                            >
+
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1.7"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+
+                                    <path
+                                        d="M21.5 3.5
+                                        3.8 10.3
+                                        c-1.2.5-1.2 1.2-.2 1.5
+                                        l4.5 1.4
+                                        1.7 5.4
+                                        c.2.6 1.4.8 1.8.3
+                                        l2.6-3.1
+                                        4.5 3.3
+                                        c.8.5 1.4.2 1.6-.7
+                                        l2.7-13.1
+                                        c.2-1.2-.4-1.7-1.5-1.3Z"
+                                    />
+
+                                    <path
+                                        d="m8.1 13.1
+                                        8.4-6.2
+                                        -6.8 7.4"
+                                    />
+
+                                </svg>
+
+                            </a>
+
+
+                            <!-- INSTAGRAM -->
+
+                            <a
+                                href="https://instagram.com/sam.clouds"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="hero-social-link"
+                                aria-label="Instagram"
+                            >
+
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1.7"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+
+                                    <rect
+                                        x="3"
+                                        y="3"
+                                        width="18"
+                                        height="18"
+                                        rx="5"
+                                    />
+
+                                    <circle
+                                        cx="12"
+                                        cy="12"
+                                        r="4"
+                                    />
+
+                                    <circle
+                                        cx="17.5"
+                                        cy="6.5"
+                                        r=".7"
+                                        fill="currentColor"
+                                        stroke="none"
+                                    />
+
+                                </svg>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- HERO VISUAL -->
+
+                    <div
+                        class="hero-visual reveal"
+                    >
+
+                        <div
+                            class="visual-orbit"
+                        ></div>
+
+                        <div
+                            class="visual-orbit two"
+                        ></div>
+
+                        <div class="visual-core">
+
+                            <div class="core-text">
+                                SH
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            class="floating-code code-one"
+                        >
+                            &lt;build /&gt;
+                        </div>
+
+
+                        <div
+                            class="floating-code code-two"
+                        >
+                            PHP + MySQL
+                        </div>
+
+
+                        <div
+                            class="floating-code code-three"
+                        >
+                            DIGITAL / 01
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             MARQUEE
+        ====================================================== -->
+
+        <div class="marquee">
+
+            <div class="marquee-track">
+
+                <span data-i18n="marqueeWeb">
+                    WEB DEVELOPMENT
+                </span>
+
+                <span class="dot">✦</span>
+
+                <span data-i18n="marqueeSoftware">
+                    SOFTWARE DEVELOPMENT
+                </span>
+
+                <span class="dot">✦</span>
+
+                <span data-i18n="marqueeUI">
+                    UI / UX
+                </span>
+
+                <span class="dot">✦</span>
+
+                <span data-i18n="marqueeDigital">
+                    DIGITAL PRODUCTS
+                </span>
+
+                <span class="dot">✦</span>
+
+
+                <span data-i18n="marqueeWeb">
+                    WEB DEVELOPMENT
+                </span>
+
+                <span class="dot">✦</span>
+
+                <span data-i18n="marqueeSoftware">
+                    SOFTWARE DEVELOPMENT
+                </span>
+
+                <span class="dot">✦</span>
+
+                <span data-i18n="marqueeUI">
+                    UI / UX
+                </span>
+
+                <span class="dot">✦</span>
+
+                <span data-i18n="marqueeDigital">
+                    DIGITAL PRODUCTS
+                </span>
+
+                <span class="dot">✦</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             WORK
+        ====================================================== -->
+
+        <section id="work">
+
+            <div class="container">
+
+
+                <div
+                    class="projects-header reveal"
+                >
+
+                    <div>
+
+                        <div
+                            class="section-label"
+                            data-i18n="workLabel"
+                        >
+                            01 — SELECTED WORK
+                        </div>
+
+
+                        <h2
+                            class="section-title"
+                            data-i18n="workTitle"
+                        >
+                            Things I've built.
+                        </h2>
+
+                    </div>
+
+
+                    <p
+                        class="section-description"
+                        data-i18n="workDescription"
+                    >
+                        A selection of projects where design,
+                        development and functionality come together.
+                    </p>
+
+                </div>
+
+
+                <div class="project-grid">
+
+
+                    <!-- =================================================
+                         TECHCAREER
+                    ================================================== -->
+
+                    <article
+                        class="project-card reveal"
+                    >
+
+                        <a
+                            href="http://techcareer.atwebpages.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Open TechCareer"
+                        >
+
+                            <div class="project-preview">
+
+                                <img
+                                    src="assets/techcareer.png"
+                                    alt="TechCareer website screenshot"
+                                    class="project-image"
+                                >
+
+                            </div>
+
+                        </a>
+
+
+                        <span class="project-number">
+                            01
+                        </span>
+
+
+                        <h3
+                            class="project-name"
+                            data-i18n="techCareerName"
+                        >
+                            TechCareer
+                        </h3>
+
+
+                        <p
+                            class="project-description"
+                            data-i18n="techCareerDescription"
+                        >
+                            A job application and recruitment platform
+                            designed to connect applicants and employers
+                            through a structured digital workflow.
+                        </p>
+
+
+                        <div class="project-footer">
+
+
+                            <div class="tags">
+
+                                <span class="tag">
+                                    PHP
+                                </span>
+
+                                <span class="tag">
+                                    MYSQL
+                                </span>
+
+                                <span class="tag">
+                                    HTML
+                                </span>
+
+                                <span class="tag">
+                                    CSS
+                                </span>
+
+                                <span class="tag">
+                                    JAVASCRIPT
+                                </span>
+
+                            </div>
+
+
+                            <!-- LIVE DEMO BUTTON -->
+
+                            <a
+                                href="http://techcareer.atwebpages.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="project-link"
+                                data-i18n="liveDemo"
+                            >
+                                <span>LIVE DEMO</span>
+                                <span class="project-link-icon">↗</span>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         NEXT PROJECT
+                    ================================================== -->
+
+                    <article
+                        class="project-card reveal"
+                    >
+
+                        <div
+                            class="project-preview"
+                        >
+
+                            <div
+                                style="
+                                    width:100%;
+                                    height:100%;
+                                    display:grid;
+                                    place-items:center;
+                                "
+                            >
+
+                                <span
+                                    data-i18n="nextProject"
+                                    style="
+                                        font-family:
+                                            'Space Grotesk',
+                                            'Noto Sans Ethiopic',
+                                            sans-serif;
+
+                                        font-size:11px;
+
+                                        color:
+                                            var(--muted-2);
+
+                                        letter-spacing:1.5px;
+                                    "
+                                >
+                                    NEXT PROJECT
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <span class="project-number">
+                            02
+                        </span>
+
+
+                        <h3
+                            class="project-name"
+                            data-i18n="nextProjectTitle"
+                        >
+                            Next Project
+                        </h3>
+
+
+                        <p
+                            class="project-description"
+                            data-i18n="nextProjectDescription"
+                        >
+                            Your next real website or software project
+                            will be showcased here with its live demo,
+                            technology stack and project story.
+                        </p>
+
+
+                        <div class="project-footer">
+
+                            <div class="tags">
+
+                                <span
+                                    class="tag"
+                                    data-i18n="comingSoon"
+                                >
+                                    COMING SOON
+                                </span>
+
+                            </div>
+
+
+                            <span class="project-link">
+                                02 / 05
+                            </span>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SERVICES
+        ====================================================== -->
+
+        <section id="services">
+
+            <div class="container">
+
+
+                <div class="reveal">
+
+                    <div
+                        class="section-label"
+                        data-i18n="servicesLabel"
+                    >
+                        02 — WHAT I DO
+                    </div>
+
+
+                    <h2
+                        class="section-title"
+                        data-i18n="servicesTitle"
+                    >
+                        I turn ideas into useful digital products.
+                    </h2>
+
+
+                    <p
+                        class="section-description"
+                        data-i18n="servicesDescription"
+                    >
+                        From the first interface to the underlying
+                        functionality, I focus on creating products
+                        that look good and actually work.
+                    </p>
+
+                </div>
+
+
+                <div class="services-grid">
+
+
+                    <!-- WEB -->
+
+                    <article
+                        class="service-card reveal"
+                    >
+
+                        <div class="service-number">
+                            01
+                        </div>
+
+
+                        <h3
+                            class="service-title"
+                            data-i18n="webTitle"
+                        >
+                            Web Development
+                        </h3>
+
+
+                        <p
+                            class="service-text"
+                            data-i18n="webDescription"
+                        >
+                            Responsive and modern websites built with
+                            clean structure, strong interfaces and
+                            practical functionality.
+                        </p>
+
+                    </article>
+
+
+                    <!-- SOFTWARE -->
+
+                    <article
+                        class="service-card reveal"
+                    >
+
+                        <div class="service-number">
+                            02
+                        </div>
+
+
+                        <h3
+                            class="service-title"
+                            data-i18n="softwareTitle"
+                        >
+                            Software Development
+                        </h3>
+
+
+                        <p
+                            class="service-text"
+                            data-i18n="softwareDescription"
+                        >
+                            Functional software solutions with databases,
+                            authentication, dashboards and real-world
+                            workflows.
+                        </p>
+
+                    </article>
+
+
+                    <!-- UI UX -->
+
+                    <article
+                        class="service-card reveal"
+                    >
+
+                        <div class="service-number">
+                            03
+                        </div>
+
+
+                        <h3
+                            class="service-title"
+                            data-i18n="uiTitle"
+                        >
+                            UI / UX
+                        </h3>
+
+
+                        <p
+                            class="service-text"
+                            data-i18n="uiDescription"
+                        >
+                            Interfaces designed around clarity,
+                            usability and a modern visual language.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             TECHNOLOGY
+        ====================================================== -->
+
+        <section>
+
+            <div class="container">
+
+
+                <div class="reveal">
+
+                    <div
+                        class="section-label"
+                        data-i18n="techLabel"
+                    >
+                        03 — TECHNOLOGY
+                    </div>
+
+
+                    <h2
+                        class="section-title"
+                        data-i18n="techTitle"
+                    >
+                        Tools I build with.
+                    </h2>
+
+
+                    <p
+                        class="section-description"
+                        data-i18n="techDescription"
+                    >
+                        A practical toolkit focused on building useful
+                        digital products instead of collecting
+                        technologies for the sake of it.
+                    </p>
+
+                </div>
+
+
+                <div class="tech-list reveal">
+
+                    <span class="tech-item">HTML</span>
+                    <span class="tech-item">CSS</span>
+                    <span class="tech-item">JAVASCRIPT</span>
+                    <span class="tech-item">PHP</span>
+                    <span class="tech-item">MYSQL</span>
+                    <span class="tech-item">BOOTSTRAP</span>
+                    <span class="tech-item">GIT</span>
+                    <span class="tech-item">GITHUB</span>
+                    <span class="tech-item">VS CODE</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ABOUT
+        ====================================================== -->
+
+        <section id="about">
+
+            <div class="container">
+
+                <div class="about-grid">
+
+
+                    <div class="reveal">
+
+                        <div
+                            class="section-label"
+                            data-i18n="aboutLabel"
+                        >
+                            04 — ABOUT
+                        </div>
+
+
+                        <h2
+                            class="about-big"
+                            data-i18n="aboutTitle"
+                        >
+                            Building.
+                            <br>
+                            Learning.
+                            <br>
+                            Improving.
+                        </h2>
+
+                    </div>
+
+
+                    <div class="reveal">
+
+
+                        <p
+                            class="about-text"
+                            data-i18n="aboutParagraph1"
+                        >
+                            I'm
+                            <strong>
+                                SAMUEL HAILU
+                            </strong>,
+                            a developer interested in building digital
+                            products that solve actual problems.
+                        </p>
+
+
+                        <p
+                            class="about-text"
+                            data-i18n="aboutParagraph2"
+                        >
+                            I work across the front end and back end,
+                            connecting interfaces with databases and
+                            application logic to create complete
+                            experiences rather than isolated screens.
+                        </p>
+
+
+                        <p
+                            class="about-text"
+                            data-i18n="aboutParagraph3"
+                        >
+                            My approach is simple:
+                            understand the problem,
+                            build the solution,
+                            test it,
+                            find what is weak,
+                            and improve it.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             JOURNEY
+        ====================================================== -->
+
+        <section>
+
+            <div class="container">
+
+
+                <div class="reveal">
+
+                    <div
+                        class="section-label"
+                        data-i18n="journeyLabel"
+                    >
+                        05 — JOURNEY
+                    </div>
+
+
+                    <h2
+                        class="section-title"
+                        data-i18n="journeyTitle"
+                    >
+                        Still learning. Still building.
+                    </h2>
+
+                </div>
+
+
+                <div class="timeline">
+
+
+                    <!-- START -->
+
+                    <div
+                        class="timeline-item reveal"
+                    >
+
+                        <div class="timeline-year">
+                            START
+                        </div>
+
+
+                        <div>
+
+                            <h3
+                                class="timeline-title"
+                                data-i18n="journeyStartTitle"
+                            >
+                                Started Building
+                            </h3>
+
+
+                            <p
+                                class="timeline-text"
+                                data-i18n="journeyStartText"
+                            >
+                                Began exploring web development and
+                                understanding how websites work beyond
+                                what users see.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DEVELOPMENT -->
+
+                    <div
+                        class="timeline-item reveal"
+                    >
+
+                        <div class="timeline-year">
+                            DEVELOPMENT
+                        </div>
+
+
+                        <div>
+
+                            <h3
+                                class="timeline-title"
+                                data-i18n="journeyDevelopmentTitle"
+                            >
+                                From Pages to Systems
+                            </h3>
+
+
+                            <p
+                                class="timeline-text"
+                                data-i18n="journeyDevelopmentText"
+                            >
+                                Moved from static interfaces into PHP,
+                                MySQL, authentication, dashboards and
+                                complete web applications.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- NOW -->
+
+                    <div
+                        class="timeline-item reveal"
+                    >
+
+                        <div class="timeline-year">
+                            NOW
+                        </div>
+
+
+                        <div>
+
+                            <h3
+                                class="timeline-title"
+                                data-i18n="journeyNowTitle"
+                            >
+                                Building Better
+                            </h3>
+
+
+                            <p
+                                class="timeline-text"
+                                data-i18n="journeyNowText"
+                            >
+                                Continuing to improve development,
+                                interface design and software architecture
+                                through real projects.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CONTACT
+        ====================================================== -->
+
+        <section
+            class="contact"
+            id="contact"
+        >
+
+            <div class="container">
+
+
+                <div
+                    class="contact-box reveal"
+                >
+
+
+                    <div
+                        class="section-label"
+                        data-i18n="contactLabel"
+                    >
+                        06 — CONTACT
+                    </div>
+
+
+                    <h2
+                        class="contact-title"
+                        data-i18n="contactTitle"
+                    >
+                        Have an idea?
+                        <br>
+                        Let's build it.
+                    </h2>
+
+
+                    <p
+                        class="contact-text"
+                        data-i18n="contactDescription"
+                    >
+                        Have a website, software or digital product
+                        in mind? Let's turn the idea into something real.
+                    </p>
+
+
+                    <div class="contact-actions">
+
+
+                        <a
+                            href="malito:samuelhailu1245@gmail.com"
+                            class="btn btn-primary"
+                            data-i18n="emailMe"
+                        >
+                            EMAIL ME ↗
+                        </a>
+
+
+                        <a
+                            href="#work"
+                            class="btn btn-secondary"
+                            data-i18n="viewWork"
+                        >
+                            VIEW MY WORK
+                        </a>
+
+                    </div>
+
+
+                    <!-- SOCIAL CONTACT -->
+
+                    <div class="social-grid">
+
+
+                        <!-- PHONE -->
+
+                        <a
+                            href="tel:+251980431421"
+                            class="social-card"
+                        >
+
+                            <div class="social-icon">
+
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1.8"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2
+                                        19.79 19.79 0 0 1-8.63-3.07
+                                        19.5 19.5 0 0 1-6-6
+                                        19.79 19.79 0 0 1-3.07-8.67
+                                        A2 2 0 0 1 4.11 2h3
+                                        a2 2 0 0 1 2 1.72
+                                        12.84 12.84 0 0 0 .7 2.81
+                                        2 2 0 0 1-.45 2.11
+                                        L8.09 9.91
+                                        a16 16 0 0 0 6 6
+                                        l1.27-1.27
+                                        a2 2 0 0 1 2.11-.45
+                                        12.84 12.84 0 0 0 2.81.7
+                                        A2 2 0 0 1 22 16.92z"
+                                    />
+
+                                </svg>
+
+                            </div>
+
+
+                            <div>
+
+                                <span
+                                    class="social-label"
+                                    data-i18n="phoneLabel"
+                                >
+                                    PHONE
+                                </span>
+
+
+                                <span class="social-value">
+                                    +251 980 431 421
+                                </span>
+
+                            </div>
+
+                        </a>
+
+
+                        <!-- TELEGRAM -->
+
+                        <a
+                            href="https://t.me/heruy890"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-card"
+                        >
+
+                            <div class="social-icon">
+
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1.7"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+
+                                    <path
+                                        d="M21.5 3.5
+                                        3.8 10.3
+                                        c-1.2.5-1.2 1.2-.2 1.5
+                                        l4.5 1.4
+                                        1.7 5.4
+                                        c.2.6 1.4.8 1.8.3
+                                        l2.6-3.1
+                                        4.5 3.3
+                                        c.8.5 1.4.2 1.6-.7
+                                        l2.7-13.1
+                                        c.2-1.2-.4-1.7-1.5-1.3Z"
+                                    />
+
+                                    <path
+                                        d="m8.1 13.1
+                                        8.4-6.2
+                                        -6.8 7.4"
+                                    />
+
+                                </svg>
+
+                            </div>
+
+
+                            <div>
+
+                                <span
+                                    class="social-label"
+                                    data-i18n="telegramLabel"
+                                >
+                                    TELEGRAM
+                                </span>
+
+
+                                <span class="social-value">
+                                    @heruy890
+                                </span>
+
+                            </div>
+
+                        </a>
+
+
+                        <!-- INSTAGRAM -->
+
+                        <a
+                            href="https://instagram.com/sam.clouds"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-card"
+                        >
+
+                            <div class="social-icon">
+
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1.7"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+
+                                    <rect
+                                        x="3"
+                                        y="3"
+                                        width="18"
+                                        height="18"
+                                        rx="5"
+                                    />
+
+                                    <circle
+                                        cx="12"
+                                        cy="12"
+                                        r="4"
+                                    />
+
+                                    <circle
+                                        cx="17.5"
+                                        cy="6.5"
+                                        r=".7"
+                                        fill="currentColor"
+                                        stroke="none"
+                                    />
+
+                                </svg>
+
+                            </div>
+
+
+                            <div>
+
+                                <span
+                                    class="social-label"
+                                    data-i18n="instagramLabel"
+                                >
+                                    INSTAGRAM
+                                </span>
+
+
+                                <span class="social-value">
+                                    @sam.clouds
+                                </span>
+
+                            </div>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-inner">
+
+
+                <div class="footer-name">
+                    SAMUEL HAILU
+                </div>
+
+
+                <div
+                    class="footer-copy"
+                    data-i18n="footerCopy"
+                >
+                    © 2026 SAMUEL HAILU. ALL RIGHTS RESERVED.
+                </div>
+
+
+                <div class="footer-socials">
+
+
+                    <!-- TELEGRAM -->
+
+                    <a
+                        href="https://t.me/heruy890"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="footer-social"
+                        aria-label="Telegram"
+                    >
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+
+                            <path
+                                d="M21.5 3.5
+                                3.8 10.3
+                                c-1.2.5-1.2 1.2-.2 1.5
+                                l4.5 1.4
+                                1.7 5.4
+                                c.2.6 1.4.8 1.8.3
+                                l2.6-3.1
+                                4.5 3.3
+                                c.8.5 1.4.2 1.6-.7
+                                l2.7-13.1
+                                c.2-1.2-.4-1.7-1.5-1.3Z"
+                            />
+
+                        </svg>
+
+                    </a>
+
+
+                    <!-- INSTAGRAM -->
+
+                    <a
+                        href="https://instagram.com/sam.clouds"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="footer-social"
+                        aria-label="Instagram"
+                    >
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+
+                            <rect
+                                x="3"
+                                y="3"
+                                width="18"
+                                height="18"
+                                rx="5"
+                            />
+
+                            <circle
+                                cx="12"
+                                cy="12"
+                                r="4"
+                            />
+
+                        </svg>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script>
+
+
+        /* =====================================================
+           THEME
+        ====================================================== */
+
+        const html =
+            document.documentElement;
+
+
+        const themeToggle =
+            document.getElementById(
+                "themeToggle"
+            );
+
+
+        const savedTheme =
+            localStorage.getItem(
+                "samuel-theme"
+            );
+
+
+        if (
+            savedTheme === "light"
+        ) {
+
+            html.setAttribute(
+                "data-theme",
+                "light"
+            );
+
+        } else {
+
+            html.setAttribute(
+                "data-theme",
+                "dark"
+            );
+
+        }
+
+
+        themeToggle.addEventListener(
+            "click",
+            () => {
+
+                const currentTheme =
+                    html.getAttribute(
+                        "data-theme"
+                    );
+
+
+                const nextTheme =
+                    currentTheme === "dark"
+                        ? "light"
+                        : "dark";
+
+
+                html.setAttribute(
+                    "data-theme",
+                    nextTheme
+                );
+
+
+                localStorage.setItem(
+                    "samuel-theme",
+                    nextTheme
+                );
+
+
+                const themeColor =
+                    nextTheme === "light"
+                        ? "#edf1f2"
+                        : "#07090b";
+
+
+                const metaTheme =
+                    document.querySelector(
+                        'meta[name="theme-color"]'
+                    );
+
+
+                if (metaTheme) {
+
+                    metaTheme.setAttribute(
+                        "content",
+                        themeColor
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           LANGUAGE TRANSLATIONS
+        ====================================================== */
+
+        const translations = {
+
+            /* =================================================
+               ENGLISH
+            ================================================== */
+
+            en: {
+
+                navHome:
+                    "HOME",
+
+                navWork:
+                    "WORK",
+
+                navServices:
+                    "SERVICES",
+
+                navAbout:
+                    "ABOUT",
+
+                navContact:
+                    "CONTACT",
+
+
+                availability:
+                    "AVAILABLE FOR SELECTED PROJECTS",
+
+
+                heroTitle:
+                    `I BUILD <span class="accent">DIGITAL</span> EXPERIENCES.`,
+
+
+                heroDescription:
+                    `I'm <strong>SAMUEL HAILU</strong>, a web developer and software developer focused on building modern, functional and memorable digital products.`,
+
+
+                exploreWork:
+                    `EXPLORE MY WORK <span>↗</span>`,
+
+                letsTalk:
+                    "LET'S TALK",
+
+
+                marqueeWeb:
+                    "WEB DEVELOPMENT",
+
+                marqueeSoftware:
+                    "SOFTWARE DEVELOPMENT",
+
+                marqueeUI:
+                    "UI / UX",
+
+                marqueeDigital:
+                    "DIGITAL PRODUCTS",
+
+
+                workLabel:
+                    "01 — SELECTED WORK",
+
+                workTitle:
+                    "Things I've built.",
+
+                workDescription:
+                    "A selection of projects where design, development and functionality come together.",
+
+
+                techCareerName:
+                    "TechCareer",
+
+                techCareerDescription:
+                    "A job application and recruitment platform designed to connect applicants and employers through a structured digital workflow.",
+
+                liveDemo:
+                    `<span>LIVE DEMO</span><span class="project-link-icon">↗</span>`,
+
+
+                nextProject:
+                    "NEXT PROJECT",
+
+                nextProjectTitle:
+                    "Next Project",
+
+                nextProjectDescription:
+                    "Your next real website or software project will be showcased here with its live demo, technology stack and project story.",
+
+                comingSoon:
+                    "COMING SOON",
+
+
+                servicesLabel:
+                    "02 — WHAT I DO",
+
+                servicesTitle:
+                    "I turn ideas into useful digital products.",
+
+                servicesDescription:
+                    "From the first interface to the underlying functionality, I focus on creating products that look good and actually work.",
+
+
+                webTitle:
+                    "Web Development",
+
+                webDescription:
+                    "Responsive and modern websites built with clean structure, strong interfaces and practical functionality.",
+
+
+                softwareTitle:
+                    "Software Development",
+
+                softwareDescription:
+                    "Functional software solutions with databases, authentication, dashboards and real-world workflows.",
+
+
+                uiTitle:
+                    "UI / UX",
+
+                uiDescription:
+                    "Interfaces designed around clarity, usability and a modern visual language.",
+
+
+                techLabel:
+                    "03 — TECHNOLOGY",
+
+                techTitle:
+                    "Tools I build with.",
+
+                techDescription:
+                    "A practical toolkit focused on building useful digital products instead of collecting technologies for the sake of it.",
+
+
+                aboutLabel:
+                    "04 — ABOUT",
+
+                aboutTitle:
+                    `Building.<br>Learning.<br>Improving.`,
+
+
+                aboutParagraph1:
+                    `I'm <strong>SAMUEL HAILU</strong>, a developer interested in building digital products that solve actual problems.`,
+
+
+                aboutParagraph2:
+                    "I work across the front end and back end, connecting interfaces with databases and application logic to create complete experiences rather than isolated screens.",
+
+
+                aboutParagraph3:
+                    "My approach is simple: understand the problem, build the solution, test it, find what is weak, and improve it.",
+
+
+                journeyLabel:
+                    "05 — JOURNEY",
+
+                journeyTitle:
+                    "Still learning. Still building.",
+
+
+                journeyStartTitle:
+                    "Started Building",
+
+                journeyStartText:
+                    "Began exploring web development and understanding how websites work beyond what users see.",
+
+
+                journeyDevelopmentTitle:
+                    "From Pages to Systems",
+
+                journeyDevelopmentText:
+                    "Moved from static interfaces into PHP, MySQL, authentication, dashboards and complete web applications.",
+
+
+                journeyNowTitle:
+                    "Building Better",
+
+                journeyNowText:
+                    "Continuing to improve development, interface design and software architecture through real projects.",
+
+
+                contactLabel:
+                    "06 — CONTACT",
+
+                contactTitle:
+                    `Have an idea?<br>Let's build it.`,
+
+
+                contactDescription:
+                    "Have a website, software or digital product in mind? Let's turn the idea into something real.",
+
+
+                emailMe:
+                    "EMAIL ME ↗",
+
+                viewWork:
+                    "VIEW MY WORK",
+
+
+                phoneLabel:
+                    "PHONE",
+
+                telegramLabel:
+                    "TELEGRAM",
+
+                instagramLabel:
+                    "INSTAGRAM",
+
+
+                footerCopy:
+                    "© 2026 SAMUEL HAILU. ALL RIGHTS RESERVED."
+            },
+
+
+            /* =================================================
+               SIMPLE AMHARIC
+            ================================================== */
+
+            am: {
+
+                navHome:
+                    "መነሻ",
+
+                navWork:
+                    "ስራዎች",
+
+                navServices:
+                    "አገልግሎቶች",
+
+                navAbout:
+                    "ስለ እኔ",
+
+                navContact:
+                    "ያግኙኝ",
+
+
+                availability:
+                    "ለፕሮጀክት ስራ ክፍት ነኝ",
+
+
+                heroTitle:
+                    `<span class="accent">ዲጂታል</span> ምርቶችን እገነባለሁ።`,
+
+
+                heroDescription:
+                    `እኔ <strong>SAMUEL HAILU</strong> ነኝ። ዘመናዊ እና ተግባራዊ ድረ-ገጾችን እና ሶፍትዌሮችን እገነባለሁ።`,
+
+
+                exploreWork:
+                    `ስራዎቼን ይመልከቱ <span>↗</span>`,
+
+                letsTalk:
+                    "እንነጋገር",
+
+
+                marqueeWeb:
+                    "የድረ-ገጽ ልማት",
+
+                marqueeSoftware:
+                    "የሶፍትዌር ልማት",
+
+                marqueeUI:
+                    "UI / UX",
+
+                marqueeDigital:
+                    "ዲጂታል ምርቶች",
+
+
+                workLabel:
+                    "01 — የተመረጡ ስራዎች",
+
+                workTitle:
+                    "የገነባኋቸው ስራዎች።",
+
+                workDescription:
+                    "እዚህ የምታዩት የገነባኋቸው የድረ-ገጽ እና የሶፍትዌር ስራዎች ናቸው።",
+
+
+                techCareerName:
+                    "TechCareer",
+
+                techCareerDescription:
+                    "ሰዎች ስራ እንዲያመለክቱ እና ቀጣሪዎች ሰራተኛ እንዲያገኙ የሚያግዝ የስራ መፈለጊያ ስርዓት።",
+
+                liveDemo:
+                    `<span>ስራውን ይመልከቱ</span><span class="project-link-icon">↗</span>`,
+
+
+                nextProject:
+                    "ቀጣዩ ፕሮጀክት",
+
+                nextProjectTitle:
+                    "ቀጣዩ ፕሮጀክት",
+
+                nextProjectDescription:
+                    "ቀጣዩ የምገነባው የድረ-ገጽ ወይም የሶፍትዌር ስራ እዚህ ይታያል።",
+
+                comingSoon:
+                    "በቅርቡ",
+
+
+                servicesLabel:
+                    "02 — የማደርገው",
+
+                servicesTitle:
+                    "ሀሳብን ወደ ጠቃሚ ዲጂታል ምርት እቀይራለሁ።",
+
+                servicesDescription:
+                    "ድረ-ገጽ ወይም ሶፍትዌር ስሰራ ውብ እና በትክክል የሚሰራ እንዲሆን እጠነቀቃለሁ።",
+
+
+                webTitle:
+                    "የድረ-ገጽ ልማት",
+
+                webDescription:
+                    "ለስልክ እና ለኮምፒውተር የሚስማሙ ዘመናዊ ድረ-ገጾችን እሰራለሁ።",
+
+
+                softwareTitle:
+                    "የሶፍትዌር ልማት",
+
+                softwareDescription:
+                    "ዳታቤዝ፣ መግቢያ፣ ዳሽቦርድ እና ሌሎች ተግባራት ያሉትን ሶፍትዌር እሰራለሁ።",
+
+
+                uiTitle:
+                    "UI / UX",
+
+                uiDescription:
+                    "ቀላል፣ ግልጽ እና ለመጠቀም የሚመች ኢንተርፌስ እሰራለሁ።",
+
+
+                techLabel:
+                    "03 — ቴክኖሎጂ",
+
+                techTitle:
+                    "የምጠቀምባቸው መሳሪያዎች።",
+
+                techDescription:
+                    "በስራ ላይ የምጠቀምባቸው የድረ-ገጽ እና የሶፍትዌር መሳሪያዎች።",
+
+
+                aboutLabel:
+                    "04 — ስለ እኔ",
+
+                aboutTitle:
+                    `እገነባለሁ።<br>እማራለሁ።<br>እሻሻላለሁ።`,
+
+
+                aboutParagraph1:
+                    `እኔ <strong>SAMUEL HAILU</strong> ነኝ። ለእውነተኛ ችግር የሚሆን ዲጂታል መፍትሄ መገንባት እወዳለሁ።`,
+
+
+                aboutParagraph2:
+                    "በፊት-ኤንድ እና ባክ-ኤንድ ላይ እሰራለሁ። ድረ-ገጹን ከዳታቤዝ እና ከሚያስፈልገው ስርዓት ጋር አገናኛለሁ።",
+
+
+                aboutParagraph3:
+                    "መጀመሪያ ችግሩን እረዳለሁ። ከዚያ መፍትሄውን እገነባለሁ፣ እፈትሻለሁ እና አስፈላጊ ከሆነ እሻሽላለሁ።",
+
+
+                journeyLabel:
+                    "05 — የእኔ ጉዞ",
+
+                journeyTitle:
+                    "አሁንም እማራለሁ። አሁንም እገነባለሁ።",
+
+
+                journeyStartTitle:
+                    "መገንባት ጀመርኩ",
+
+                journeyStartText:
+                    "የድረ-ገጽ ልማትን መማር እና ድረ-ገጾች እንዴት እንደሚሰሩ መረዳት ጀመርኩ።",
+
+
+                journeyDevelopmentTitle:
+                    "ከገጾች ወደ ስርዓቶች",
+
+                journeyDevelopmentText:
+                    "ከቀላል ድረ-ገጾች ወደ PHP፣ MySQL፣ ዳሽቦርድ እና ሙሉ የድረ-ገጽ ስርዓቶች ተሸጋገርኩ።",
+
+
+                journeyNowTitle:
+                    "የበለጠ ጥሩ ነገር መገንባት",
+
+                journeyNowText:
+                    "በእውነተኛ ፕሮጀክቶች እየሰራሁ የኮድ፣ ዲዛይን እና ሶፍትዌር ግንባታ ችሎታዬን እያሻሻልኩ ነው።",
+
+
+                contactLabel:
+                    "06 — ያግኙኝ",
+
+                contactTitle:
+                    `ሀሳብ አለዎት?<br>እንገንባው።`,
+
+
+                contactDescription:
+                    "ድረ-ገጽ፣ ሶፍትዌር ወይም ሌላ ዲጂታል ስራ ካለዎት አብረን እንስራው።",
+
+
+                emailMe:
+                    "ኢሜይል ይላኩ ↗",
+
+                viewWork:
+                    "ስራዎቼን ይመልከቱ",
+
+
+                phoneLabel:
+                    "ስልክ",
+
+                telegramLabel:
+                    "ቴሌግራም",
+
+                instagramLabel:
+                    "ኢንስታግራም",
+
+
+                footerCopy:
+                    "© 2026 SAMUEL HAILU. መብቱ በሙሉ የተጠበቀ ነው።"
+
+            }
+
+        };
+
+
+        /* =====================================================
+           LANGUAGE SYSTEM
+        ====================================================== */
+
+        const languageToggle =
+            document.getElementById(
+                "languageToggle"
+            );
+
+        const languageCurrent =
+            document.getElementById(
+                "languageCurrent"
+            );
+
+        const languageOther =
+            document.getElementById(
+                "languageOther"
+            );
+
+        const savedLanguage =
+            localStorage.getItem(
+                "samuel-language"
+            );
+
+        const initialLanguage =
+            savedLanguage === "am"
+                ? "am"
+                : "en";
+
+
+        function applyLanguage(language) {
+
+            const dictionary =
+                translations[language];
+
+
+            document
+                .querySelectorAll(
+                    "[data-i18n]"
+                )
+                .forEach(
+                    element => {
+
+                        const key =
+                            element.getAttribute(
+                                "data-i18n"
+                            );
+
+
+                        if (
+                            dictionary[key] !== undefined
+                        ) {
+
+                            element.innerHTML =
+                                dictionary[key];
+
+                        }
+
+                    }
+                );
+
+
+            html.setAttribute(
+                "lang",
+                language === "am"
+                    ? "am"
+                    : "en"
+            );
+
+
+            html.setAttribute(
+                "data-language",
+                language
+            );
+
+
+            if (
+                language === "am"
+            ) {
+
+                languageCurrent.textContent =
+                    "አማ";
+
+                languageOther.textContent =
+                    "EN";
+
+            } else {
+
+                languageCurrent.textContent =
+                    "EN";
+
+                languageOther.textContent =
+                    "አማ";
+
+            }
+
+
+            localStorage.setItem(
+                "samuel-language",
+                language
+            );
+
+        }
+
+
+        applyLanguage(
+            initialLanguage
+        );
+
+
+        languageToggle.addEventListener(
+            "click",
+            () => {
+
+                const currentLanguage =
+                    html.getAttribute(
+                        "data-language"
+                    );
+
+
+                const nextLanguage =
+                    currentLanguage === "en"
+                        ? "am"
+                        : "en";
+
+
+                applyLanguage(
+                    nextLanguage
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           MOBILE MENU
+        ====================================================== */
+
+        const menuBtn =
+            document.getElementById(
+                "menuBtn"
+            );
+
+        const navLinks =
+            document.getElementById(
+                "navLinks"
+            );
+
+
+        menuBtn.addEventListener(
+            "click",
+            () => {
+
+                navLinks.classList.toggle(
+                    "active"
+                );
+
+
+                menuBtn.textContent =
+                    navLinks.classList.contains(
+                        "active"
+                    )
+                        ? "×"
+                        : "☰";
+
+            }
+        );
+
+
+        document
+            .querySelectorAll(
+                ".nav-links a"
+            )
+            .forEach(
+                link => {
+
+                    link.addEventListener(
+                        "click",
+                        () => {
+
+                            navLinks.classList.remove(
+                                "active"
+                            );
+
+                            menuBtn.textContent =
+                                "☰";
+
+                        }
+                    );
+
+                }
+            );
+
+
+        /* =====================================================
+           SCROLL REVEAL
+        ====================================================== */
+
+        const revealElements =
+            document.querySelectorAll(
+                ".reveal"
+            );
+
+
+        const revealObserver =
+            new IntersectionObserver(
+
+                entries => {
+
+                    entries.forEach(
+                        entry => {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target.classList.add(
+                                    "active"
+                                );
+
+
+                                revealObserver.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+
+                {
+                    threshold:
+                        0.10
+                }
+
+            );
+
+
+        revealElements.forEach(
+            element => {
+
+                revealObserver.observe(
+                    element
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           SMOOTH CURSOR GLOW
+        ====================================================== */
+
+        const glow =
+            document.querySelector(
+                ".cursor-glow"
+            );
+
+
+        let mouseX = 0;
+        let mouseY = 0;
+
+        let glowX = 0;
+        let glowY = 0;
+
+
+        document.addEventListener(
+            "mousemove",
+            event => {
+
+                mouseX =
+                    event.clientX;
+
+                mouseY =
+                    event.clientY;
+
+            }
+        );
+
+
+        function animateGlow() {
+
+            glowX +=
+                (mouseX - glowX) *
+                0.12;
+
+
+            glowY +=
+                (mouseY - glowY) *
+                0.12;
+
+
+            glow.style.left =
+                glowX + "px";
+
+
+            glow.style.top =
+                glowY + "px";
+
+
+            requestAnimationFrame(
+                animateGlow
+            );
+
+        }
+
+
+        animateGlow();
+
+
+        /* =====================================================
+           PROJECT CARD TILT
+        ====================================================== */
+
+        const projectCards =
+            document.querySelectorAll(
+                ".project-card"
+            );
+
+
+        projectCards.forEach(
+            card => {
+
+
+                card.addEventListener(
+                    "mousemove",
+                    event => {
+
+                        if (
+                            window.innerWidth <= 900
+                        ) {
+                            return;
+                        }
+
+
+                        const rect =
+                            card.getBoundingClientRect();
+
+
+                        const x =
+                            event.clientX -
+                            rect.left;
+
+
+                        const y =
+                            event.clientY -
+                            rect.top;
+
+
+                        const centerX =
+                            rect.width / 2;
+
+
+                        const centerY =
+                            rect.height / 2;
+
+
+                        const rotateX =
+                            (
+                                (y - centerY) /
+                                centerY
+                            ) * -1.5;
+
+
+                        const rotateY =
+                            (
+                                (x - centerX) /
+                                centerX
+                            ) * 1.5;
+
+
+                        card.style.transform =
+                            `
+                            perspective(900px)
+                            rotateX(${rotateX}deg)
+                            rotateY(${rotateY}deg)
+                            translateY(-5px)
+                            `;
+
+                    }
+                );
+
+
+                card.addEventListener(
+                    "mouseleave",
+                    () => {
+
+                        card.style.transform =
+                            "";
+
+                    }
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           SMOOTH NAVIGATION
+        ====================================================== */
+
+        document
+            .querySelectorAll(
+                'a[href^="#"]'
+            )
+            .forEach(
+                anchor => {
+
+                    anchor.addEventListener(
+                        "click",
+                        function(event) {
+
+                            const targetID =
+                                this.getAttribute(
+                                    "href"
+                                );
+
+
+                            if (
+                                !targetID ||
+                                targetID === "#"
+                            ) {
+                                return;
+                            }
+
+
+                            const target =
+                                document.querySelector(
+                                    targetID
+                                );
+
+
+                            if (!target) {
+                                return;
+                            }
+
+
+                            event.preventDefault();
+
+
+                            const navbar =
+                                document.querySelector(
+                                    ".navbar"
+                                );
+
+
+                            const offset =
+                                navbar.offsetHeight +
+                                25;
+
+
+                            const position =
+                                target
+                                    .getBoundingClientRect()
+                                    .top
+                                +
+                                window.scrollY
+                                -
+                                offset;
+
+
+                            window.scrollTo({
+
+                                top:
+                                    position,
+
+                                behavior:
+                                    "smooth"
+
+                            });
+
+                        }
+                    );
+
+                }
+            );
+
+    </script>
+
+</body>
+
+</html>

@@ -757,7 +757,7 @@
            NAVBAR
         ========================================================== */
 
-          .navbar {
+        .navbar {
 
             position: fixed;
 
@@ -3667,7 +3667,7 @@
                             <span
                                 data-i18n="availability"
                             >
-                                AVAILABLE FOR SELECTED PROJECTS
+                                I'm open to project work
                             </span>
 
                         </div>
@@ -3682,7 +3682,7 @@
                             <span class="accent">
                                 DIGITAL
                             </span>
-                            EXPERIENCES.
+                            PRODUCTS.
 
                         </h1>
 
@@ -3697,9 +3697,7 @@
                                 SAMUEL HAILU
                             </strong>,
 
-                            a web developer and software developer
-                            focused on building modern, functional
-                            and memorable digital products.
+                             I build modern and functional websites and softwares.
 
                         </p>
 
@@ -3711,7 +3709,7 @@
                                 class="btn btn-primary"
                                 data-i18n="exploreWork"
                             >
-                                EXPLORE MY WORK
+                                EXPLORE MY WORKS
                                 <span>↗</span>
                             </a>
 
@@ -4006,7 +4004,7 @@
                             class="section-title"
                             data-i18n="workTitle"
                         >
-                            Things I've built.
+                            The works that I have built.
                         </h2>
 
                     </div>
@@ -4016,8 +4014,7 @@
                         class="section-description"
                         data-i18n="workDescription"
                     >
-                        A selection of projects where design,
-                        development and functionality come together.
+                        What you can see here is the web and software works that I have built.
                     </p>
 
                 </div>
@@ -4071,9 +4068,7 @@
                             class="project-description"
                             data-i18n="techCareerDescription"
                         >
-                            A job application and recruitment platform
-                            designed to connect applicants and employers
-                            through a structured digital workflow.
+                            A job search system that helps people apply for jobs and employers find employees.
                         </p>
 
 
@@ -4251,9 +4246,7 @@
                         class="section-description"
                         data-i18n="servicesDescription"
                     >
-                        From the first interface to the underlying
-                        functionality, I focus on creating products
-                        that look good and actually work.
+                       When I build a website or software, I make sure that it is beautiful and works properly.
                     </p>
 
                 </div>
@@ -4285,9 +4278,7 @@
                             class="service-text"
                             data-i18n="webDescription"
                         >
-                            Responsive and modern websites built with
-                            clean structure, strong interfaces and
-                            practical functionality.
+                           I make smart websites that are compatible with phones and computers.
                         </p>
 
                     </article>
@@ -4316,9 +4307,7 @@
                             class="service-text"
                             data-i18n="softwareDescription"
                         >
-                            Functional software solutions with databases,
-                            authentication, dashboards and real-world
-                            workflows.
+                           I make a simple, clear, and easy-to-use interface.
                         </p>
 
                     </article>
@@ -4474,9 +4463,7 @@
                             data-i18n="aboutParagraph2"
                         >
                             I work across the front end and back end,
-                            connecting interfaces with databases and
-                            application logic to create complete
-                            experiences rather than isolated screens.
+                            I will link the website to the database and the required system.
                         </p>
 
 
@@ -4484,12 +4471,7 @@
                             class="about-text"
                             data-i18n="aboutParagraph3"
                         >
-                            My approach is simple:
-                            understand the problem,
-                            build the solution,
-                            test it,
-                            find what is weak,
-                            and improve it.
+                           First of all, I understand the problem. I will then build the solution, test it, and improve it if necessary.
                         </p>
 
                     </div>
@@ -4691,7 +4673,11 @@
                     <div class="contact-actions">
 
 
-                        <a href="mailto:samuelhailu1245@gmail.com" class="btn">
+                        <a
+                            href="malito:samuelhailu1245@gmail.com"
+                            class="btn btn-primary"
+                            data-i18n="emailMe"
+                        >
                             EMAIL ME ↗
                         </a>
 
@@ -5042,19 +5028,30 @@
                 "themeToggle"
             );
 
-const savedTheme = localStorage.getItem("portfolio-theme") || "light";
 
-if (savedTheme === "light") {
-    document.body.classList.add("light-mode");
-    themeBtn.textContent = "☾";
-    themeBtn.title = "Dark mode";
-    themeBtn.setAttribute("aria-label", "Switch to dark mode");
-} else {
-    themeBtn.textContent = "☼";
-    themeBtn.title = "Light mode";
-    themeBtn.setAttribute("aria-label", "Switch to light mode");
-}
-  
+        const savedTheme =
+            localStorage.getItem(
+                "samuel-theme"
+            );
+
+
+        if (
+            savedTheme === "light"
+        ) {
+
+            html.setAttribute(
+                "data-theme",
+                "light"
+            );
+
+        } else {
+
+            html.setAttribute(
+                "data-theme",
+                "dark"
+            );
+
+        }
 
 
         themeToggle.addEventListener(
@@ -5455,6 +5452,7 @@ if (savedTheme === "light") {
                 aboutLabel:
                     "04 — ስለ እኔ",
 
+
                 aboutParagraph1:
                     `እኔ <strong>SAMUEL HAILU</strong> ነኝ። ለእውነተኛ ችግር የሚሆን ዲጂታል መፍትሄ መገንባት እወዳለሁ።`,
 
@@ -5469,6 +5467,9 @@ if (savedTheme === "light") {
 
                 journeyLabel:
                     "05 — የእኔ ጉዞ",
+
+                journeyTitle:
+                    "አሁንም እማራለሁ። አሁንም እገነባለሁ።",
 
 
                 journeyStartTitle:
@@ -5496,7 +5497,7 @@ if (savedTheme === "light") {
                     "06 — ያግኙኝ",
 
                 contactTitle:
-                    `ሀሳብ አለዎት?<br>እንገንባው!`,
+                    `ሀሳብ አለዎት?<br>እንገንባው።`,
 
 
                 contactDescription:

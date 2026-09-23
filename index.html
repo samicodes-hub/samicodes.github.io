@@ -5042,30 +5042,19 @@
                 "themeToggle"
             );
 
+const savedTheme = localStorage.getItem("portfolio-theme") || "light";
 
-        const savedTheme =
-            localStorage.getItem(
-                "samuel-theme"
-            );
-
-
-        if (
-            savedTheme === "light"
-        ) {
-
-            html.setAttribute(
-                "data-theme",
-                "light"
-            );
-
-        } else {
-
-            html.setAttribute(
-                "data-theme",
-                "dark"
-            );
-
-        }
+if (savedTheme === "light") {
+    document.body.classList.add("light-mode");
+    themeBtn.textContent = "☾";
+    themeBtn.title = "Dark mode";
+    themeBtn.setAttribute("aria-label", "Switch to dark mode");
+} else {
+    themeBtn.textContent = "☼";
+    themeBtn.title = "Light mode";
+    themeBtn.setAttribute("aria-label", "Switch to light mode");
+}
+  
 
 
         themeToggle.addEventListener(

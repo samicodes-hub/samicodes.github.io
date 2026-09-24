@@ -1755,7 +1755,7 @@
         const chosen = lang === "am" ? "am" : "en";
         root.dataset.lang = chosen;
         document.documentElement.lang = chosen === "am" ? "am" : "en";
-        localStorage.setItem("samuel-language-v2", chosen);
+        localStorage.setItem("samuel-language-v3", chosen);
 
         Object.values(languageMap).forEach(item => {
           const el = document.querySelector(item.selector);
@@ -1793,7 +1793,7 @@
         });
       };
 
-      const savedLanguage = localStorage.getItem("samuel-language-v2");
+      const savedLanguage = localStorage.getItem("samuel-language-v3");
       applyLanguage(savedLanguage === "am" ? "am" : "en");
       languageToggle.addEventListener("click", () => {
         applyLanguage(root.dataset.lang === "en" ? "am" : "en");
@@ -1808,14 +1808,14 @@
       const contactAurora = document.getElementById("contactAurora");
 
       // Theme
-      const savedTheme = localStorage.getItem("samuel-theme-v2");
+      const savedTheme = localStorage.getItem("samuel-theme-v3");
       const initialTheme = savedTheme === "dark" || savedTheme === "light"
         ? savedTheme
         : "light";
 
       const setTheme = (theme) => {
         root.dataset.theme = theme;
-        localStorage.setItem("samuel-theme-v2", theme);
+        localStorage.setItem("samuel-theme-v3", theme);
         themeToggle.setAttribute(
           "aria-label",
           theme === "light" ? "Switch to dark mode" : "Switch to light mode"

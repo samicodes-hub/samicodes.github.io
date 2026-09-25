@@ -40,12 +40,12 @@
       --cursor-1: rgba(119,185,0,.13);
       --cursor-2: rgba(119,185,0,.055);
       --cursor-3: rgba(119,185,0,.018);
-      --contact-line: rgba(48,78,20,.82);
-      --contact-glow: rgba(119,185,0,.48);
-      --contact-beam: rgba(84,126,27,.95);
-      --contact-dot: #679900;
-      --contact-halo-a: rgba(119,185,0,.36);
-      --contact-halo-b: rgba(48,68,34,.18);
+      --contact-line: rgba(42,72,8,.98);
+      --contact-glow: rgba(98,158,0,.76);
+      --contact-beam: rgba(65,102,10,1);
+      --contact-dot: #4e7900;
+      --contact-halo-a: rgba(119,185,0,.52);
+      --contact-halo-b: rgba(48,68,34,.26);
     }
 
     html[data-theme="dark"] {
@@ -82,9 +82,9 @@
 
     html[data-theme="light"] .contact-aurora::before {
       background:
-        radial-gradient(circle at 50% 78%, rgba(103,153,0,.20), transparent 24%),
-        radial-gradient(circle at 15% 85%, rgba(103,153,0,.12), transparent 22%),
-        radial-gradient(circle at 85% 25%, rgba(72,92,108,.08), transparent 24%);
+        radial-gradient(circle at 50% 78%, rgba(91,142,0,.31), transparent 24%),
+        radial-gradient(circle at 15% 85%, rgba(91,142,0,.20), transparent 22%),
+        radial-gradient(circle at 85% 25%, rgba(58,78,94,.13), transparent 24%);
     }
 
     html[data-theme="dark"] .contact-aurora::before {
@@ -279,7 +279,7 @@
       backdrop-filter: blur(24px) saturate(165%);
       -webkit-backdrop-filter: blur(24px) saturate(165%);
       box-shadow: 0 18px 40px rgba(15,20,16,.08), inset 0 1px 0 rgba(255,255,255,.34);
-      overflow: hidden;
+      overflow: visible;
       z-index: 100;
     }
 
@@ -539,9 +539,9 @@
     .hero h1 {
       font-family: "Space Grotesk", sans-serif;
       max-width: 820px;
-      font-size: clamp(58px, 9vw, 118px);
+      font-size: clamp(52px, 7vw, 90px);
       line-height: .88;
-      letter-spacing: -7px;
+      letter-spacing: -5px;
       font-weight: 600;
     }
 
@@ -602,6 +602,48 @@
     @keyframes builderFloat {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-4px); }
+    }
+    .typing-hero-title {
+      visibility: visible;
+      min-height: 3.15em;
+    }
+    .typing-hero-title .typing-line {
+      display: inline-block;
+      white-space: pre;
+      min-height: 1em;
+    }
+    .typing-hero-title.typing-ready .typing-active::after {
+      content: "";
+      display: inline-block;
+      width: 2px;
+      height: .72em;
+      margin-left: 6px;
+      vertical-align: -.06em;
+      background: currentColor;
+      animation: typingCaret .72s steps(1) infinite;
+    }
+    .typing-hero-title.typing-done .typing-active::after { display: none; }
+    @keyframes typingCaret {
+      0%, 45% { opacity: 1; }
+      46%, 100% { opacity: 0; }
+    }
+
+    .hero.hero-typing .hero-status,
+    .hero.hero-typing .hero-copy,
+    .hero.hero-typing .hero-actions,
+    .hero.hero-typing .social-row,
+    .hero.hero-typing .hero-side {
+      opacity: 0 !important;
+      transform: translateY(14px) !important;
+      pointer-events: none !important;
+    }
+
+    .hero-status,
+    .hero-copy,
+    .hero-actions,
+    .social-row,
+    .hero-side {
+      transition: opacity .55s ease, transform .55s ease;
     }
 
     .hero-copy {
@@ -1064,7 +1106,7 @@
         radial-gradient(circle at 50% 78%, rgba(119,185,0,.15), transparent 24%),
         radial-gradient(circle at 15% 85%, rgba(119,185,0,.08), transparent 22%),
         radial-gradient(circle at 85% 25%, rgba(93,120,139,.06), transparent 24%);
-      opacity: calc(.98 * var(--contact-intensity));
+      opacity: calc(1.18 * var(--contact-intensity));
       transition: opacity .45s ease;
     }
 
@@ -1106,7 +1148,7 @@
       box-shadow:
         0 0 28px var(--contact-glow),
         inset 0 0 28px rgba(119,185,0,.06);
-      opacity: .86;
+      opacity: 1;
     }
     .contact-wave.w1 { top: 21%; animation: contactWaveFloat 8s ease-in-out infinite; }
     .contact-wave.w2 { top: 34%; width: 104%; opacity: .58; animation: contactWaveFloat 10s ease-in-out infinite reverse; }
@@ -1122,7 +1164,7 @@
       transform: translate(-50%, -50%);
       background: linear-gradient(90deg, transparent, var(--contact-beam), transparent);
       box-shadow: 0 0 24px var(--contact-glow);
-      opacity: .7;
+      opacity: .9;
       animation: contactScanSweep 4.8s ease-in-out infinite;
     }
     .contact-scan.s2 { top: 59%; animation-delay: -2.4s; opacity: .38; }
@@ -1138,7 +1180,7 @@
       border-radius: 50%;
       background: var(--contact-dot);
       box-shadow: 0 0 0 3px rgba(119,185,0,.14), 0 0 28px var(--contact-glow);
-      opacity: .84;
+      opacity: .98;
       animation: contactParticleDrift var(--dur, 7s) ease-in-out infinite;
     }
     .contact-particle:nth-child(1) { left: 16%; top: 70%; --x: 60px; --y: -90px; --dur: 8.2s; }
@@ -1254,24 +1296,74 @@
     .hero .hero-side { transition-delay: .2s; }
 
     @media (max-width: 880px) {
-      .nav-links, .nav-cta { display: none; }
-      .lang-toggle { min-width: 56px; padding-inline: 8px; }
-      .menu-btn { display: grid; place-items: center; }
-      .nav-open .nav-links {
+      .site-nav {
+        isolation: isolate;
+        min-height: 64px;
+        padding-inline: 14px;
+        background: rgba(239,243,238,.82);
+        backdrop-filter: blur(24px) saturate(170%);
+        -webkit-backdrop-filter: blur(24px) saturate(170%);
+        box-shadow: 0 12px 34px rgba(15,20,16,.14), inset 0 1px 0 rgba(255,255,255,.46);
+      }
+      html[data-theme="dark"] .site-nav {
+        background: rgba(14,18,15,.82);
+        box-shadow: 0 14px 36px rgba(0,0,0,.38), inset 0 1px 0 rgba(255,255,255,.10);
+      }
+      .site-nav nav { position: static; flex: 1 1 auto; min-width: 0; }
+      .nav-links {
         position: absolute;
         top: calc(100% + 10px);
-        left: 0;
-        right: 0;
-        display: grid;
-        gap: 4px;
-        padding: 10px;
+        left: 12px;
+        right: 12px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2px;
+        padding: 8px;
         border: 1px solid var(--line-strong);
-        border-radius: 16px;
-        background: var(--nav);
-        backdrop-filter: blur(20px);
+        border-radius: 18px;
+        background: rgba(248,250,247,.96);
+        backdrop-filter: blur(24px) saturate(165%);
+        -webkit-backdrop-filter: blur(24px) saturate(165%);
+        box-shadow: 0 22px 48px rgba(15,20,16,.18), inset 0 1px 0 rgba(255,255,255,.65);
+        z-index: 120;
       }
-      .nav-open .nav-links a { display: block; padding: 13px 12px; }
-      .nav-open .nav-links a::after { display: none; }
+      html[data-theme="dark"] .nav-links {
+        background: rgba(16,20,17,.97);
+        box-shadow: 0 22px 48px rgba(0,0,0,.44), inset 0 1px 0 rgba(255,255,255,.08);
+      }
+      .site-nav.nav-open .nav-links {
+        display: grid;
+        animation: mobileMenuIn .22s ease both;
+      }
+      @keyframes mobileMenuIn {
+        from { opacity: 0; transform: translateY(-8px) scale(.98); }
+        to { opacity: 1; transform: translateY(0) scale(1); }
+      }
+      .nav-links a {
+        display: block;
+        padding: 13px 12px;
+        color: var(--text);
+        border-radius: 12px;
+      }
+      .nav-links a:hover, .nav-links a.active { background: var(--accent-soft); color: var(--text); }
+      .nav-links a::after { display: none; }
+      .nav-cta { display: none; }
+      .nav-actions { position: relative; z-index: 130; flex-shrink: 0; }
+      .menu-btn {
+        display: grid;
+        place-items: center;
+        width: 42px;
+        height: 42px;
+        flex: 0 0 42px;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+        position: relative;
+        z-index: 140;
+        background: rgba(255,255,255,.34);
+      }
+      html[data-theme="dark"] .menu-btn { background: rgba(255,255,255,.05); }
+      .lang-toggle { min-width: 56px; padding-inline: 8px; }
 
       .hero-shell, .about-grid { grid-template-columns: 1fr; }
       .hero-side { justify-self: start; width: min(100%, 560px); }
@@ -1299,7 +1391,7 @@
       .brand { transform: translateX(-3px); font-size: 17px; }
       section { padding: 84px 0; }
       .hero { min-height: auto; padding-top: 135px; }
-      .hero h1 { font-size: clamp(51px, 17vw, 82px); letter-spacing: -4px; }
+      .hero h1 { font-size: clamp(43px, 13vw, 68px); letter-spacing: -3px; }
       .hero-copy { font-size: 14px; }
       .hero-side { width: 100%; }
       .hero-visual { min-height: 245px; }
@@ -1405,7 +1497,7 @@
       <div class="container hero-shell">
         <div class="reveal">
           <div class="hero-status"><span class="status-dot"></span> Building and learning through real projects</div>
-          <h1>WEB DEVELOPER.<br><span class="accent">SOFTWARE</span><br><span class="outline">BUILDER.</span></h1>
+          <h1 class="typing-hero-title"><span class="typing-line typing-web"></span><br><span class="typing-line accent typing-software"></span><br><span class="typing-line outline typing-builder"></span></h1>
           <p class="hero-copy">
             I'm <strong>SAMUEL HAILU</strong>, a web and software developer focused on turning practical ideas into clean, useful digital products.
           </p>
@@ -1682,7 +1774,6 @@
         "nav.cta": { selector: ".nav-cta", en: "Let's talk ↗", am: "እንነጋገር ↗" },
 
         "hero.status": { selector: ".hero-status", en: "<span class=\"status-dot\"></span> Building and learning through real projects", am: "<span class=\"status-dot\"></span> በእውነተኛ ፕሮጀክቶች እየገነባሁና እየተማርኩ ነው" },
-        "hero.title": { selector: ".hero h1", en: "WEB DEVELOPER.<br><span class=\"accent\">SOFTWARE</span><br><span class=\"outline\">BUILDER.</span>", am: "የድር ገንቢ።<br><span class=\"accent\">ሶፍትዌር</span><br><span class=\"outline\">ገንቢ።</span>" },
         "hero.copy": { selector: ".hero-copy", en: "I'm <strong>SAMUEL HAILU</strong>, a web and software developer focused on turning practical ideas into clean, useful digital products.", am: "እኔ <strong>SAMUEL HAILU</strong> ነኝ፤ ሀሳቦችን ወደ ንጹህ እና ጠቃሚ ዲጂታል ምርቶች የምቀይር የድርና የሶፍትዌር ገንቢ ነኝ።" },
         "hero.work": { selector: ".hero-actions .primary-btn", en: "View selected work ↗", am: "ስራዎቼን ይመልከቱ ↗" },
         "hero.email": { selector: ".hero-actions .secondary-btn", en: "Email me ↗", am: "ኢሜይል ላኩልኝ ↗" },
@@ -1761,6 +1852,8 @@
           const el = document.querySelector(item.selector);
           if (el) el.innerHTML = item[chosen];
         });
+        // The hero title is controlled by the typing animation.
+        // Keep its markup intact so typing can update the three existing lines.
 
         // Keep descriptions and metadata synchronized with the selected language.
         const title = chosen === "am" ? "ሳሙኤል ሐይሉ — የድርና የሶፍትዌር ገንቢ" : "SAMUEL HAILU — Web Developer & Software Developer";
@@ -1793,10 +1886,82 @@
         });
       };
 
-      const savedLanguage = localStorage.getItem("samuel-language-v3");
+      let heroTypingRun = 0;
+
+      const typeHeroTitle = (language) => {
+        const run = ++heroTypingRun;
+        const heroSection = document.querySelector(".hero");
+        const heroTitle = document.querySelector(".typing-hero-title");
+        const heroWeb = document.querySelector(".typing-web");
+        const heroSoftware = document.querySelector(".typing-software");
+        const heroBuilder = document.querySelector(".typing-builder");
+        if (!heroSection || !heroTitle || !heroWeb || !heroSoftware || !heroBuilder) return;
+
+        const isAmharic = language === "am";
+        const parts = [
+          [heroWeb, isAmharic ? "የድር ገንቢ።" : "WEB DEVELOPER."],
+          [heroSoftware, isAmharic ? "ሶፍትዌር" : "SOFTWARE"],
+          [heroBuilder, isAmharic ? "ገንቢ።" : "BUILDER."]
+        ];
+
+        heroSection.classList.add("hero-typing");
+        heroTitle.classList.add("typing-ready");
+        heroTitle.classList.remove("typing-done");
+        parts.forEach(([el]) => { el.textContent = ""; el.classList.remove("typing-active"); });
+
+        const finish = () => {
+          if (run !== heroTypingRun) return;
+          heroTitle.classList.remove("typing-ready");
+          heroTitle.classList.add("typing-done");
+          window.setTimeout(() => {
+            if (run === heroTypingRun) heroSection.classList.remove("hero-typing");
+          }, 240);
+        };
+
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          parts.forEach(([el, text]) => { el.textContent = text; });
+          finish();
+          return;
+        }
+
+        let partIndex = 0;
+        let charIndex = 0;
+
+        const typeNext = () => {
+          if (run !== heroTypingRun) return;
+          if (partIndex >= parts.length) { finish(); return; }
+
+          const [el, text] = parts[partIndex];
+          document.querySelectorAll(".typing-hero-title .typing-active").forEach(node => node.classList.remove("typing-active"));
+          el.classList.add("typing-active");
+          el.textContent = text.slice(0, charIndex + 1);
+          charIndex += 1;
+
+          if (charIndex < text.length) {
+            window.setTimeout(typeNext, 58);
+          } else {
+            partIndex += 1;
+            charIndex = 0;
+            window.setTimeout(typeNext, 320);
+          }
+        };
+
+        // Let the initial page paint first, then start typing so the animation is visible.
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            if (run === heroTypingRun) window.setTimeout(typeNext, 350);
+          });
+        });
+      };
+
+      const savedLanguage = localStorage.getItem("samuel-language-v6");
       applyLanguage(savedLanguage === "am" ? "am" : "en");
+      typeHeroTitle(root.dataset.lang);
       languageToggle.addEventListener("click", () => {
-        applyLanguage(root.dataset.lang === "en" ? "am" : "en");
+        const nextLanguage = root.dataset.lang === "en" ? "am" : "en";
+        localStorage.setItem("samuel-language-v6", nextLanguage);
+        applyLanguage(nextLanguage);
+        typeHeroTitle(nextLanguage);
       });
 
       const themeIcon = document.getElementById("themeIcon");
@@ -1834,17 +1999,33 @@
       });
 
       // Mobile nav
-      menuBtn.addEventListener("click", () => {
-        const isOpen = siteNav.classList.toggle("nav-open");
+      const closeMobileNav = () => {
+        siteNav.classList.remove("nav-open");
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.setAttribute("aria-label", "Open menu");
+      };
+
+      const toggleMobileNav = () => {
+        const isOpen = !siteNav.classList.contains("nav-open");
+        siteNav.classList.toggle("nav-open", isOpen);
         menuBtn.setAttribute("aria-expanded", String(isOpen));
-      });
+        menuBtn.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+      };
+
+      // Native click is the most reliable interaction for both mouse and phone touch.
+      menuBtn.addEventListener("click", toggleMobileNav);
 
       navLinks.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", () => {
-          siteNav.classList.remove("nav-open");
-          menuBtn.setAttribute("aria-expanded", "false");
-        });
+        link.addEventListener("click", closeMobileNav);
       });
+
+      document.addEventListener("click", (event) => {
+        if (!siteNav.contains(event.target)) closeMobileNav();
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 880) closeMobileNav();
+      }, { passive: true });
 
       // Smooth cursor glow — restored from the original animated design.
       const finePointer = window.matchMedia("(pointer:fine)");

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" data-lang="en">
+<html lang="en" data-theme="dark" data-lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#f4f6f3">
+  <meta name="theme-color" content="#0b0f0b">
   <meta name="description" content="SAMUEL HAILU — Web Developer and Software Developer building clean, functional digital products.">
   <meta property="og:title" content="SAMUEL HAILU — Web Developer & Software Developer">
   <meta property="og:description" content="Portfolio of Samuel Hailu — web development, software development and digital products.">
@@ -690,47 +690,6 @@
       box-shadow: none;
     }
 
-    .focus-panel {
-      margin-top: 16px;
-      padding: 17px 18px 18px;
-      border: 1px solid var(--line-strong);
-      border-radius: 18px;
-      background: linear-gradient(145deg, rgba(255,255,255,.52), rgba(255,255,255,.20));
-      backdrop-filter: blur(18px) saturate(130%);
-      -webkit-backdrop-filter: blur(18px) saturate(130%);
-      box-shadow: 0 14px 34px rgba(25,35,27,.055), inset 0 1px 0 rgba(255,255,255,.38);
-      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease, background .25s ease;
-    }
-    .focus-panel:hover {
-      transform: translateY(-4px);
-      border-color: rgba(119,185,0,.34);
-      box-shadow: 0 20px 40px rgba(25,35,27,.09), 0 0 0 1px rgba(119,185,0,.05);
-    }
-    html[data-theme="dark"] .focus-panel {
-      background: linear-gradient(145deg, rgba(25,30,26,.62), rgba(17,20,18,.36));
-      border-color: rgba(255,255,255,.10);
-      box-shadow: 0 16px 38px rgba(0,0,0,.17), inset 0 1px 0 rgba(255,255,255,.04);
-    }
-    html[data-theme="dark"] .focus-panel:hover {
-      border-color: rgba(183,243,74,.28);
-    }
-
-    .side-kicker {
-      color: var(--muted-2);
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1.8px;
-      font-weight: 800;
-    }
-
-    .side-title {
-      margin-top: 10px;
-      font-family: "Space Grotesk", sans-serif;
-      font-size: 24px;
-      line-height: 1.1;
-      letter-spacing: -1px;
-    }
-
     .side-stack { display: grid; gap: 10px; margin-top: 22px; }
     .side-item { display: flex; justify-content: space-between; gap: 18px; color: var(--muted); font-size: 12px; }
     .side-item strong { color: var(--text); font-weight: 600; }
@@ -757,6 +716,7 @@
       place-items: center;
       margin-bottom: 0;
       overflow: visible;
+      transform: translateY(-24px);
     }
     .visual-orbit {
       position: absolute;
@@ -1229,6 +1189,113 @@
 
 
 
+
+    /* Refined interactive hover system */
+    .project-card,
+    .service,
+    .fact,
+    .focus-card,
+    .social-icon,
+    .mini-btn,
+    .primary-btn,
+    .secondary-btn,
+    .nav-cta {
+      position: relative;
+      overflow: hidden;
+      transform-style: preserve-3d;
+      transition:
+        transform .38s cubic-bezier(.22,.61,.36,1),
+        border-color .3s ease,
+        box-shadow .38s ease,
+        background .3s ease,
+        color .3s ease;
+    }
+
+    .project-card::before,
+    .service::before,
+    .focus-card::before,
+    .fact::before,
+    .social-icon::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(circle, rgba(194,255,86,.20) 0%, rgba(194,255,86,.07) 26%, transparent 62%);
+      opacity: 0;
+      transform: scale(.55) translate3d(16%, 12%, 0);
+      transition: opacity .35s ease, transform .55s cubic-bezier(.22,.61,.36,1);
+      pointer-events: none;
+    }
+
+    .project-card::after,
+    .service::after,
+    .focus-card::after,
+    .social-icon::after {
+      content: "";
+      position: absolute;
+      top: -120%;
+      left: -30%;
+      width: 48%;
+      height: 340%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent);
+      transform: rotate(22deg) translateX(-180%);
+      transition: transform .75s cubic-bezier(.22,.61,.36,1);
+      pointer-events: none;
+    }
+
+    .project-card:hover,
+    .service:hover,
+    .focus-card:hover,
+    .fact:hover {
+      transform: translateY(-8px) scale(1.012);
+      box-shadow: 0 22px 60px rgba(0,0,0,.18), 0 0 0 1px rgba(194,255,86,.10), 0 0 34px rgba(194,255,86,.08);
+    }
+
+    html[data-theme="dark"] .project-card:hover,
+    html[data-theme="dark"] .service:hover,
+    html[data-theme="dark"] .focus-card:hover,
+    html[data-theme="dark"] .fact:hover {
+      box-shadow: 0 24px 70px rgba(0,0,0,.42), 0 0 0 1px rgba(194,255,86,.16), 0 0 42px rgba(194,255,86,.11);
+    }
+
+    .project-card:hover::before,
+    .service:hover::before,
+    .focus-card:hover::before,
+    .fact:hover::before,
+    .social-icon:hover::before { opacity: 1; transform: scale(1) translate3d(0,0,0); }
+
+    .project-card:hover::after,
+    .service:hover::after,
+    .focus-card:hover::after,
+    .social-icon:hover::after { transform: rotate(22deg) translateX(420%); }
+
+    .project-visual img {
+      transition: transform .65s cubic-bezier(.22,.61,.36,1), filter .45s ease;
+    }
+    .project-card:hover .project-visual img {
+      transform: scale(1.035);
+      filter: saturate(1.08) contrast(1.03);
+    }
+
+    .social-icon:hover {
+      transform: translateY(-5px) rotate(-2deg) scale(1.06);
+      box-shadow: 0 14px 30px rgba(0,0,0,.18), 0 0 24px rgba(194,255,86,.12);
+    }
+
+    .mini-btn:hover,
+    .primary-btn:hover,
+    .secondary-btn:hover,
+    .nav-cta:hover {
+      transform: translateY(-3px) scale(1.015);
+      box-shadow: 0 12px 28px rgba(0,0,0,.14), 0 0 20px rgba(194,255,86,.10);
+    }
+
+    html[data-theme="dark"] .mini-btn:hover,
+    html[data-theme="dark"] .primary-btn:hover,
+    html[data-theme="dark"] .secondary-btn:hover,
+    html[data-theme="dark"] .nav-cta:hover {
+      box-shadow: 0 12px 30px rgba(0,0,0,.38), 0 0 24px rgba(194,255,86,.14);
+    }
+
     @media (prefers-reduced-motion: reduce) {
       .contact-halo, .contact-wave, .contact-scan, .contact-particle, .contact-axis, .hero h1 .outline { animation: none !important; }
       .contact-aurora { transition: none; }
@@ -1367,7 +1434,7 @@
 
       .hero-shell, .about-grid { grid-template-columns: 1fr; }
       .hero-side { justify-self: start; width: min(100%, 560px); }
-      .hero-visual { min-height: 270px; }
+      .hero-visual { min-height: 270px; transform: translateY(-18px); }
       .section-heading { align-items: start; flex-direction: column; }
       .project-meta { min-height: 0; }
       .project-links { align-items: center; margin-top: 16px; }
@@ -1394,7 +1461,7 @@
       .hero h1 { font-size: clamp(43px, 13vw, 68px); letter-spacing: -3px; }
       .hero-copy { font-size: 14px; }
       .hero-side { width: 100%; }
-      .hero-visual { min-height: 245px; }
+      .hero-visual { min-height: 245px; transform: translateY(-14px); }
       .visual-orbit { width: 210px; height: 210px; }
       .visual-orbit.two { width: 150px; height: 150px; }
       .work-grid { grid-template-columns: 1fr; }
@@ -1408,6 +1475,113 @@
       .footer-inner { align-items: flex-start; flex-direction: column; }
       .contact-stage { width: 150vw; height: 80vh; top: 62%; }
       .contact-wave.w2 { width: 120%; }
+    }
+
+
+    /* Refined interactive hover system */
+    .project-card,
+    .service,
+    .fact,
+    .focus-card,
+    .social-icon,
+    .mini-btn,
+    .primary-btn,
+    .secondary-btn,
+    .nav-cta {
+      position: relative;
+      overflow: hidden;
+      transform-style: preserve-3d;
+      transition:
+        transform .38s cubic-bezier(.22,.61,.36,1),
+        border-color .3s ease,
+        box-shadow .38s ease,
+        background .3s ease,
+        color .3s ease;
+    }
+
+    .project-card::before,
+    .service::before,
+    .focus-card::before,
+    .fact::before,
+    .social-icon::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(circle, rgba(194,255,86,.20) 0%, rgba(194,255,86,.07) 26%, transparent 62%);
+      opacity: 0;
+      transform: scale(.55) translate3d(16%, 12%, 0);
+      transition: opacity .35s ease, transform .55s cubic-bezier(.22,.61,.36,1);
+      pointer-events: none;
+    }
+
+    .project-card::after,
+    .service::after,
+    .focus-card::after,
+    .social-icon::after {
+      content: "";
+      position: absolute;
+      top: -120%;
+      left: -30%;
+      width: 48%;
+      height: 340%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent);
+      transform: rotate(22deg) translateX(-180%);
+      transition: transform .75s cubic-bezier(.22,.61,.36,1);
+      pointer-events: none;
+    }
+
+    .project-card:hover,
+    .service:hover,
+    .focus-card:hover,
+    .fact:hover {
+      transform: translateY(-8px) scale(1.012);
+      box-shadow: 0 22px 60px rgba(0,0,0,.18), 0 0 0 1px rgba(194,255,86,.10), 0 0 34px rgba(194,255,86,.08);
+    }
+
+    html[data-theme="dark"] .project-card:hover,
+    html[data-theme="dark"] .service:hover,
+    html[data-theme="dark"] .focus-card:hover,
+    html[data-theme="dark"] .fact:hover {
+      box-shadow: 0 24px 70px rgba(0,0,0,.42), 0 0 0 1px rgba(194,255,86,.16), 0 0 42px rgba(194,255,86,.11);
+    }
+
+    .project-card:hover::before,
+    .service:hover::before,
+    .focus-card:hover::before,
+    .fact:hover::before,
+    .social-icon:hover::before { opacity: 1; transform: scale(1) translate3d(0,0,0); }
+
+    .project-card:hover::after,
+    .service:hover::after,
+    .focus-card:hover::after,
+    .social-icon:hover::after { transform: rotate(22deg) translateX(420%); }
+
+    .project-visual img {
+      transition: transform .65s cubic-bezier(.22,.61,.36,1), filter .45s ease;
+    }
+    .project-card:hover .project-visual img {
+      transform: scale(1.035);
+      filter: saturate(1.08) contrast(1.03);
+    }
+
+    .social-icon:hover {
+      transform: translateY(-5px) rotate(-2deg) scale(1.06);
+      box-shadow: 0 14px 30px rgba(0,0,0,.18), 0 0 24px rgba(194,255,86,.12);
+    }
+
+    .mini-btn:hover,
+    .primary-btn:hover,
+    .secondary-btn:hover,
+    .nav-cta:hover {
+      transform: translateY(-3px) scale(1.015);
+      box-shadow: 0 12px 28px rgba(0,0,0,.14), 0 0 20px rgba(194,255,86,.10);
+    }
+
+    html[data-theme="dark"] .mini-btn:hover,
+    html[data-theme="dark"] .primary-btn:hover,
+    html[data-theme="dark"] .secondary-btn:hover,
+    html[data-theme="dark"] .nav-cta:hover {
+      box-shadow: 0 12px 30px rgba(0,0,0,.38), 0 0 24px rgba(194,255,86,.14);
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1538,8 +1712,6 @@
             <div class="floating-code code-two">PHP + MySQL</div>
             <div class="floating-code code-three">DIGITAL / 01</div>
           </div>
-          <div class="focus-panel">
-            
         </aside>
       </div>
     </section>
@@ -1770,12 +1942,6 @@
         "hero.work": { selector: ".hero-actions .primary-btn", en: "View selected work ↗", am: "ስራዎቼን ይመልከቱ ↗" },
         "hero.email": { selector: ".hero-actions .secondary-btn", en: "Email me ↗", am: "ኢሜይል ላኩልኝ ↗" },
         "hero.scroll": { selector: ".scroll-note", en: "<span></span> Scroll to explore", am: "<span></span> ለመመልከት ወደ ታች ይሸብልሉ" },
-        "hero.focus": { selector: ".side-kicker", en: "Current focus", am: "አሁን የምተኩርበት" },
-        "hero.sideTitle": { selector: ".side-title", en: "Building systems, not just pages.", am: "ሲስተሞችን እገነባለሁ፤ ገጾችን ብቻ አይደለም።" },
-        "hero.frontend": { selector: ".side-item:nth-child(1) span", en: "Frontend", am: "የፊት ክፍል" },
-        "hero.backend": { selector: ".side-item:nth-child(2) span", en: "Backend", am: "የኋላ ክፍል" },
-        "hero.workflow": { selector: ".side-item:nth-child(3) span", en: "Workflow", am: "የስራ ሂደት" },
-        "hero.approach": { selector: ".side-item:nth-child(4) span", en: "Approach", am: "አሰራር" },
         "hero.approachValue": { selector: ".side-item:nth-child(4) strong", en: "Learn → Build → Improve", am: "ተማር → ገንባ → አሻሽል" },
 
         "marquee.web": { selector: ".marquee-item:nth-of-type(1)", en: "Web Development", am: "የድር ልማት" },
@@ -1965,14 +2131,12 @@
       const contactAurora = document.getElementById("contactAurora");
 
       // Theme
-      const savedTheme = localStorage.getItem("samuel-theme-v3");
-      const initialTheme = savedTheme === "dark" || savedTheme === "light"
-        ? savedTheme
-        : "light";
+      const savedTheme = localStorage.getItem("samuel-theme-v4");
+      const initialTheme = savedTheme === "dark" ? "dark" : "dark";
 
       const setTheme = (theme) => {
         root.dataset.theme = theme;
-        localStorage.setItem("samuel-theme-v3", theme);
+        localStorage.setItem("samuel-theme-v4", theme);
         themeToggle.setAttribute(
           "aria-label",
           theme === "light" ? "Switch to dark mode" : "Switch to light mode"

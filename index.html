@@ -535,39 +535,26 @@
       background: var(--accent);
       box-shadow: 0 0 16px var(--accent-glow);
     }
+.hero h1 {
+    font-family: "Sora", sans-serif;
+    font-size: clamp(58px, 8.2vw, 108px);
+    font-weight: 800;
+    line-height: .98;
+    letter-spacing: -.075em;
+    text-transform: uppercase;
+    max-width: 1000px;
+}
 
-    .hero h1 {
-      font-family: "Space Grotesk", sans-serif;
-      max-width: 820px;
-      font-size: clamp(52px, 7vw, 90px);
-      line-height: .88;
-      letter-spacing: -5px;
-      font-weight: 600;
-    }
+.hero h1 .accent {
+    color: #8acb1f;
+}
 
-    .hero h1 .accent { color: var(--accent-deep); }
-    .hero h1 .outline {
-      position: relative;
-      display: inline-block;
-      color: var(--accent-deep);
-      -webkit-text-fill-color: transparent;
-      -webkit-text-stroke: 1px color-mix(in srgb, var(--accent-deep), var(--line-strong) 35%);
-      background-image: linear-gradient(110deg,
-        #679900 0%,
-        #8fd63a 24%,
-        #dff7a3 44%,
-        #77b900 56%,
-        #b6ec57 76%,
-        #679900 100%
-      );
-      background-size: 260% 100%;
-      background-position: 0% 50%;
-      -webkit-background-clip: text;
-      background-clip: text;
-      animation: builderGradient 3.8s ease-in-out infinite, builderFloat 3.8s ease-in-out infinite;
-      will-change: background-position, transform;
-      text-shadow: 0 0 24px rgba(119,185,0,.22);
-    }
+.hero h1 .outline {
+    font-family: "Sora", sans-serif;
+    font-weight: 800;
+    -webkit-text-stroke: 1.5px #a8e84c;
+    text-shadow: 0 0 18px rgba(145, 220, 45, .35);
+}
     html[data-theme="dark"] .hero h1 .outline {
       color: #cfff7a;
       -webkit-text-fill-color: transparent;
